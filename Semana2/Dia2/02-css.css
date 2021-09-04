@@ -1,0 +1,21 @@
+section {
+    background-color: aquamarine;
+}
+
+/* llamar a clases tengo que utilizar .nombre_clase */
+.rojo {
+    color: red;
+}
+
+.bordeazul {
+    border: 2px solid blue;
+}
+
+.sub {
+    text-decoration: underline;
+}
+
+#importante {
+    font-family: "Courier New";
+    background-color: peru;
+}

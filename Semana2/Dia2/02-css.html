@@ -10,7 +10,12 @@
 			color:steelblue;
 			font-family: Arial;
 		}
+		footer {
+			background-color: lightgreen;
+		}
 	</style>
+	<!-- esta manera es la idea ya que separamos todo y podemos reutilizarlo en otros documentos html -->
+	<link rel="stylesheet" href="./02-css.css">
 </head>
 <body>
 	<header>
@@ -21,20 +26,20 @@
 	<main>
 		<section>
 			<h2>Artículos</h2>
-			<article>
+			<article class="rojo bordeazul">
 				<h3>Vacunatón</h3>
 				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde porro alias reprehenderit!</p>
 			</article>
-			<article>
+			<article id="importante">
 				<h3>Chalaca de Tapía</h3>
 				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque ex repellendus expedita? Voluptates, quaerat iusto!</p>
 			</article>
 		</section>
 	</main>
 	<footer>
-		<section>
-			<h2>Contacto</h2>
-
+		<section class="rojo">
+			<h2 class="sub">Contacto</h2>
+			<p>Lorem ipsum dolor sit amet.</p>
 		</section>
 	</footer>
 </body>
