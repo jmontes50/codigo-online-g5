@@ -1,0 +1,24 @@
+/* etiquetas, .clases , #id */
+article,
+h1 {
+    text-decoration: underline;
+}
+
+/* todos los p que sean hijos dentro de un article, en cualquier nivel*/
+article p {
+    background-color: aquamarine;
+}
+
+/* > hace referencia a los primeros hijos */
+
+ol > li {
+    color: rebeccapurple;
+}
+
+article > p {
+    color: red;
+}
+
+#caja > span {
+    background-color: yellow;
+}
