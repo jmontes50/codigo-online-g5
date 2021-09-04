@@ -19,3 +19,9 @@ section {
     font-family: "Courier New";
     background-color: peru;
 }
+
+.titulo1 {
+    font-family: sans-serif;
+    text-decoration: underline;
+    color: crimson;
+}
