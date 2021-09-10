@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		.papa{
+			width:500px;
+			height:1400px;
+			border:1px solid green;
+			margin-top:40px;
+			margin-left:80px;
+			/* position relative sirve como referencia para los elementos hijos */
+			position:relative;
+		}
+		.hijo{
+			width:100px;
+			height:100px;
+			margin:5px;
+			border:1px solid red;
+		}
+		.caja2{
+			/* utilizará top right bottom y left para posicionarse y sin un padre con relative asumirá como origen el body */
+			background-color: palegreen;
+			position:absolute;
+			top:40px;
+			left:50px;
+		}
+	</style>
+</head>
+<body>
+	<section class="papa">
+		<!-- div que sean 4 .hijo .caja$ $es 1 2 3 4... de contenido cajita -->
+		<!-- div*4.hijo.caja${cajita} -->
+		<div class="hijo caja1">cajita</div>
+		<div class="hijo caja2">cajita2</div>
+		<div class="hijo caja3">cajita</div>
+		<div class="hijo caja4">cajita</div>
+	</section>
+</body>
+</html>
