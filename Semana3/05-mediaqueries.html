@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		h1{
+			background-color:blueviolet;
+		}
+
+		.titulares, .noticia{
+			border:1px solid red;
+		}
+
+		.titulares{
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.noticia{
+			max-width:200px;
+		}
+
+		/* hoja de css, aparte, solo para cierto ancho */
+		@media screen and (max-width:768px){
+			h1{
+				background-color: aquamarine;
+			}
+			.titulares{
+				border:1px solid blue;
+			}
+		}
+		/* max hasta 576 */
+		/* min desde 576 a + */
+		@media screen and (max-width:576px){
+			h1{
+				background-color:orangered;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Título</h1>
+	</header>
+	<main>
+		<section class="titulares">
+			<div class="noticia">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, omnis.
+				</p>
+			</div>
+			<div class="noticia">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, omnis.
+				</p>
+			</div>
+			<div class="noticia">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, omnis.
+				</p>
+			</div>
+		</section>
+	</main>
+</body>
+</html>
