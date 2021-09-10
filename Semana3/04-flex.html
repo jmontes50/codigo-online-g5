@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding: 0;
+			box-sizing: border-box;
+			border:1px solid red;
+		}
+
+		.menu{
+			height:450px;
+			background-color: coral;
+			display: flex;
+			flex-direction: row;
+			/* justify-content me permite alinear mis elementos de forma horizontal */
+			justify-content: space-evenly;
+			/* center,space-around,space-between,space-evenly */
+			/*  */
+			align-items:center;
+			/* center, flex-end, flex-start */
+			flex-wrap:nowrap;
+		}
+
+		.link{
+			background-color: aquamarine;
+			height:50px;
+			width: 100px;
+			padding:10px;
+			border-radius:5px;
+		}
+
+		.link3{
+			flex-grow: 3;
+		}
+
+		.link6{
+			flex-grow: 2;
+		}
+
+		.link1{
+			flex-grow: 4;
+			flex-shrink: 4;
+		}
+
+	</style>
+</head>
+<body>
+	<nav class="menu">
+		<!-- div*6.link{Link $} -->
+		<div class="link link1">Link 1</div>
+		<div class="link">Link 2</div>
+		<div class="link link3">Link 3</div>
+		<div class="link">Link 4</div>
+		<div class="link">Link 5</div>
+		<div class="link link6">Link 6</div>
+	</nav>
+</body>
+</html>
