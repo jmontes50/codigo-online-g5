@@ -1,0 +1,8 @@
+* {
+    /* RESET */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* guía temporal, donde comienza y terminan mis elementos */
+    border: 1px solid blue;
+}
