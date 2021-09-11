@@ -7,6 +7,8 @@
 	<style>
 		h1{
 			background-color:blueviolet;
+			/* calc(hace una operación) */
+			font-size:calc(14px + 3vw);
 		}
 
 		.titulares, .noticia{
@@ -20,6 +22,12 @@
 
 		.noticia{
 			max-width:200px;
+		}
+
+		header{
+			/* todo el espacio util del viewport */
+			width:100vw;
+			height:100vh;
 		}
 
 		/* hoja de css, aparte, solo para cierto ancho */
@@ -36,6 +44,14 @@
 		@media screen and (max-width:576px){
 			h1{
 				background-color:orangered;
+			}
+
+			.titulares{
+				flex-direction: column;
+			}
+
+			.noticia{
+				max-width:100%;
 			}
 		}
 	</style>
