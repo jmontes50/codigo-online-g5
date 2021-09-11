@@ -4,7 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     /* guía temporal, donde comienza y terminan mis elementos */
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     font-family: "Open Sans", Arial, sans-serif;
 }
 
@@ -48,6 +48,8 @@ button {
 button:hover {
     /* puntero esta encima */
     background-color: white;
+    /* 0-255 */
+    /* rgb(rr, gg, bb) */
     color: rgb(59, 59, 59);
 }
 
@@ -72,4 +74,54 @@ div {
 
 .hero img {
     max-width: 75vw;
+}
+
+/* tarjetas */
+.caracteristicas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.caracteristicas h2 {
+    text-align: center;
+}
+
+.tarjetas {
+    display: flex;
+}
+
+.tarjeta {
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: d_ejex d_ejey difuminado color */
+    box-shadow: 0 0 20px gray;
+}
+
+.tarjeta * {
+    margin: 5px 0;
+}
+
+.tarjeta img {
+    width: 60px;
+}
+
+.tarjeta a {
+    text-decoration: none;
+}
+/* numeros enteros, odd(impares) y even(pares) */
+.tarjeta:nth-of-type(2) {
+    background-image: linear-gradient(45deg, #3dada4, #c71fe6);
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .tarjetas {
+        flex-direction: column;
+    }
+    .tarjeta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
