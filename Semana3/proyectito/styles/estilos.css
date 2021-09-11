@@ -5,4 +5,65 @@
     box-sizing: border-box;
     /* guía temporal, donde comienza y terminan mis elementos */
     border: 1px solid blue;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+header {
+    /* linear-gradient(direccion_grados,color1,color2) */
+    background-image: linear-gradient(45deg, #3dada4, #c71fe6);
+    color: white;
+}
+
+.contenedor {
+    max-width: 900px;
+    /* arribayabajo costados */
+    /* auto = navegador tu elige */
+    margin: 0 auto;
+    display: flex;
+    /* flex-direction:row */
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    /* remover viñetas */
+    list-style-type: none;
+    align-items: center;
+}
+
+nav li {
+    margin: 0 5px;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    max-height: 40px;
+}
+
+.hero {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* al h1, h5 y div dentro de la clase hero le añado un margin de 10px */
+.hero h1,
+h5,
+div {
+    margin: 10px;
+}
+
+.hero h1 {
+    font-size: calc(16px + 2vw);
+    text-align: center;
+}
+
+.hero img {
+    max-width: 75vw;
 }
