@@ -45,6 +45,12 @@ button {
     max-height: 40px;
 }
 
+button:hover {
+    /* puntero esta encima */
+    background-color: white;
+    color: rgb(59, 59, 59);
+}
+
 .hero {
     padding: 80px;
     display: flex;
