@@ -1,0 +1,26 @@
+/* estado1 */
+.cuadrado {
+    width: 250px;
+    height: 250px;
+    border: 1px solid red;
+    background-color: steelblue;
+
+    /* propiedades de transición */
+    transition-duration: 1000ms;
+    transition-delay: 500ms;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.02, 0.96, 1, 0.06);
+}
+
+/* estado2 */
+.cuadrado:hover {
+    background-color: coral;
+    border-radius: 50%;
+
+    /* transform */
+    /* scale en una proporción (ejeX, ejeY) */
+    /* transform: scale(2, 2); */
+    /* transform: translate(100px, 200px); */
+    /* transform: rotate(180deg); */
+    transform: skewY(45deg);
+}
