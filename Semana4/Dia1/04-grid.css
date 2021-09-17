@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor {
+    border: 1px solid red;
+    height: 100vh;
+    display: grid;
+    /* grid-template-columns: 300px 300px 300px; */
+    /* repeat(cuantas, tamaño) */
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+}
+
+.item {
+    border: 1px solid blue;
+}
