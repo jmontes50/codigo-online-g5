@@ -1,0 +1,127 @@
+* {
+    /* RESET */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* guía temporal, donde comienza y terminan mis elementos */
+    /* border: 1px solid blue; */
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+header {
+    /* linear-gradient(direccion_grados,color1,color2) */
+    background-image: linear-gradient(45deg, #3dada4, #c71fe6);
+    color: white;
+}
+
+.contenedor {
+    max-width: 900px;
+    /* arribayabajo costados */
+    /* auto = navegador tu elige */
+    margin: 0 auto;
+    display: flex;
+    /* flex-direction:row */
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    /* remover viñetas */
+    list-style-type: none;
+    align-items: center;
+}
+
+nav li {
+    margin: 0 5px;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    max-height: 40px;
+}
+
+button:hover {
+    /* puntero esta encima */
+    background-color: white;
+    /* 0-255 */
+    /* rgb(rr, gg, bb) */
+    color: rgb(59, 59, 59);
+}
+
+.hero {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* al h1, h5 y div dentro de la clase hero le añado un margin de 10px */
+.hero h1,
+h5,
+div {
+    margin: 10px;
+}
+
+.hero h1 {
+    font-size: calc(16px + 2vw);
+    text-align: center;
+}
+
+.hero img {
+    max-width: 75vw;
+}
+
+/* tarjetas */
+.caracteristicas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.caracteristicas h2 {
+    text-align: center;
+}
+
+.tarjetas {
+    display: flex;
+}
+
+.tarjeta {
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: d_ejex d_ejey difuminado color */
+    box-shadow: 0 0 20px gray;
+}
+
+.tarjeta * {
+    margin: 5px 0;
+}
+
+.tarjeta img {
+    width: 60px;
+}
+
+.tarjeta a {
+    text-decoration: none;
+}
+/* numeros enteros, odd(impares) y even(pares) */
+.tarjeta:nth-of-type(2) {
+    background-image: linear-gradient(45deg, #3dada4, #c71fe6);
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .tarjetas {
+        flex-direction: column;
+    }
+    .tarjeta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
