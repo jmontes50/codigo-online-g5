@@ -20,7 +20,19 @@
     /* transform */
     /* scale en una proporción (ejeX, ejeY) */
     /* transform: scale(2, 2); */
-    /* transform: translate(100px, 200px); */
+    transform: translate(400px, 400px);
     /* transform: rotate(180deg); */
-    transform: skewY(45deg);
+    /* transform: skewY(45deg); */
+}
+
+#mifoto {
+    width: 400px;
+    /* opacity: 0 a 1 (porcentual) */
+    opacity: 0.5;
+}
+
+#mifoto:hover {
+    opacity: 1;
+    transition-property: all;
+    transition-duration: 0.5s;
 }
