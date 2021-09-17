@@ -1,0 +1,72 @@
+.padre {
+    width: 600px;
+    height: 300px;
+    border: 1px solid gray;
+    position: relative;
+    /* overflow: hidden todo lo que sobresalga de los limites de padre,desaparece */
+    /* overflow: hidden; */
+}
+
+.slide {
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    top: 100%;
+}
+
+.hijo1 {
+    background-color: aquamarine;
+    animation-name: animacion1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.hijo2 {
+    background-color: orangered;
+    animation-name: animacion2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.hijo3 {
+    background-color: cornflowerblue;
+}
+
+@keyframes animacion1 {
+    0% {
+        top: 100%;
+    }
+    4% {
+        top: 0%;
+    }
+    33% {
+        top: 0%;
+    }
+    37% {
+        top: -100%;
+    }
+    100% {
+        top: -100%;
+    }
+}
+
+@keyframes animacion2 {
+    0% {
+        top: 100%;
+    }
+    33% {
+        top: 100%;
+    }
+    37% {
+        top: 0%;
+    }
+    66% {
+        top: 0%;
+    }
+    70% {
+        top: -100%;
+    }
+    100% {
+        top: -100%;
+    }
+}
