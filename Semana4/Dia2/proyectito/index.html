@@ -19,8 +19,11 @@
 		<nav>
 			<div class="contenedor">
 				<img src="assets/logo.png" alt="logo">
+				
+				<!--  -->
+				<input type="checkbox" id="check">
 
-				<label class="show-menu-btn">
+				<label class="show-menu-btn" for="check">
 					<i class="fas fa-bars"></i>
 				</label>
 				<ul class="menu">
@@ -28,10 +31,18 @@
 					<li>Product</li>
 					<li>About</li>
 					<li>Contact</li>
+					<li>
+						<label class="hide-menu-btn" for="check">
+							<i class="fas fa-times"></i>
+						</label>
+					</li>
+					<li>
+						<button>
+							Sign Up
+						</button>
+					</li>
 				</ul>
-				<button>
-					Sign Up
-				</button>
+				
 			</div>
 		</nav>
 		<section class="hero">
