@@ -28,9 +28,15 @@ body {
     background-color: #eee;
     font-size: 48px;
     color: white;
+    /* ajusta el tamaño del background */
+    background-size: cover;
+    /* alinea el background  */
+    background-position: center;
 }
 
 .caja:nth-of-type(1) {
     /* url('http:// ó micarpeta') */
     background-image: url("../img/tile1.jpg");
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
 }
