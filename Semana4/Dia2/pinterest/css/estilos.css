@@ -61,3 +61,50 @@ input {
     /* para que entren los elementos */
     height: 350vh;
 }
+
+.tile {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.tile:hover {
+    background-color: #efefef;
+}
+
+.tile img {
+    border-radius: 8px;
+}
+
+.tile .overlay {
+    /* display: none; */
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    padding: 15px;
+}
+
+.tile:hover .overlay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tile .overlay img {
+    width: 40px;
+    background-color: #efefef;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.tile .overlay button {
+    background-color: #bd081d;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+}
