@@ -1,0 +1,36 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.contenedor {
+    padding: 50px;
+    min-width: 700px;
+    max-width: 1200px;
+    min-height: 1000px;
+    margin: 0 auto;
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-template-rows: repeat(4, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.caja {
+    background-color: #eee;
+    font-size: 48px;
+    color: white;
+}
+
+.caja:nth-of-type(1) {
+    /* url('http:// ó micarpeta') */
+    background-image: url("../img/tile1.jpg");
+}
