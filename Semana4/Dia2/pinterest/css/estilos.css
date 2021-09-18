@@ -44,3 +44,20 @@ input {
     width: 25px;
     margin: 20px;
 }
+
+/* contenido */
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.tile-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 900px;
+    /* para que entren los elementos */
+    height: 350vh;
+}
