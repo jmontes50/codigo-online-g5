@@ -80,7 +80,7 @@ input {
 }
 
 .tile .overlay {
-    /* display: none; */
+    display: none;
     position: absolute;
     z-index: 1;
     width: 90%;
@@ -98,6 +98,7 @@ input {
     background-color: #efefef;
     padding: 10px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .tile .overlay button {
@@ -107,4 +108,24 @@ input {
     padding: 10px;
     border-radius: 5px;
     border: 0;
+    cursor: pointer;
+}
+
+.tile-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.tile-bottom img {
+    width: 16px;
+    margin-right: 14px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.tile-bottom p {
+    font-weight: bold;
+    color: gray;
+    font-size: 14px;
 }
