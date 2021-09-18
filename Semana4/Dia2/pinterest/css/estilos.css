@@ -6,6 +6,11 @@
     font-family: Helvetica, sans-serif;
 }
 
+a {
+    color: gray;
+    text-decoration: none; /*no tenga el subrayado*/
+}
+
 .header {
     border-bottom: 1px solid #eee;
     display: flex;
@@ -28,4 +33,14 @@ input {
     margin: 20px;
     padding: 0 10px;
     flex-grow: 1;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons img {
+    width: 25px;
+    margin: 20px;
 }
