@@ -19,6 +19,6 @@ let cofre = ["gato", 100, true];
 console.log(cofre);
 
 //agregar items, al final de un arreglo
-cofre.push("perrete");
+cofre.push("perrete", "pinguino", "jirafa");
 
 console.log("cofre actualizado", cofre);
