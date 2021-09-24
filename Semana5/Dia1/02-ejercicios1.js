@@ -32,3 +32,9 @@ let alturaNumero = parseFloat(altura);
 let resultado = (baseNumero * alturaNumero) / 2;
 
 console.log(resultado);
+
+//3. preguntar al usuario por dos númerosy mostrar el RESIDUO de la división
+
+let numa = +prompt("Ingrese A: ");
+let numb = +prompt("Ingrese B: ");
+console.log(`el residuo de los números es : ${numa % numb}`);
