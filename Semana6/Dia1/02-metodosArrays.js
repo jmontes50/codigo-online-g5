@@ -32,3 +32,25 @@ let energiaCima = energia.map(function (energy) {
 
 console.log(energiaCima);
 console.log(energia);
+
+//Filter
+let conductores = [
+    {
+        nombre: "José",
+        vacunado: true,
+    },
+    {
+        nombre: "Glenda",
+        vacunado: true,
+    },
+    {
+        nombre: "Osmar",
+        vacunado: false,
+    },
+];
+
+let puedePasar = conductores.filter(function (driver) {
+    return driver.vacunado == true;
+});
+
+console.log(puedePasar);
