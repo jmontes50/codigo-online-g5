@@ -25,7 +25,7 @@ miTitulo.innerHTML = "Hola soy un nuevo Titulo";
 //EL HTML DENTRO DE LA ETIQUETA
 console.log(miTitulo.innerHTML);
 
-//obtener un elemento
+//obtener un elemento, objeto element
 let miCaja = document.getElementById("caja");
 
 console.log(miCaja);
@@ -36,3 +36,19 @@ miCaja.innerHTML = "<h2>Titulo Caja</h2>";
 //background-color = backgroundColor
 miCaja.style.backgroundColor = "purple";
 miCaja.style.color = "white";
+
+let misItems = document.getElementsByClassName("lista_item");
+
+console.log(misItems);
+
+//Array.from(htmlCollection), crea un arreglo
+let arregloItems = Array.from(misItems);
+
+console.log(arregloItems);
+
+//anotacion importante acerca de forEach, map, filter, find
+//forEach(function(item, indice_item){})
+arregloItems.forEach(function (item, indice) {
+    item.style.backgroundColor = "skyblue";
+    item.innerHTML = `Patata ${indice}`;
+});
