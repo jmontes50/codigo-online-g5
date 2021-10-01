@@ -48,7 +48,26 @@ console.log(arregloItems);
 
 //anotacion importante acerca de forEach, map, filter, find
 //forEach(function(item, indice_item){})
-arregloItems.forEach(function (item, indice) {
+arregloItems.forEach(function (item, indice, conjunto) {
     item.style.backgroundColor = "skyblue";
     item.innerHTML = `Patata ${indice}`;
+    console.log("mostrando el arreglo", conjunto);
 });
+
+//obtener element de diferentes maneras
+//Los querySelector y querySelectorAll funcionan de la misma manera que los selectores en css
+let miTexto = document.querySelector("#texto");
+
+console.log(miTexto);
+
+//querySelectorAll me da un NodeList
+//Este NodeList lo puedo tratar como un arreglo
+let boxes = document.querySelectorAll(".box");
+
+console.log(boxes);
+
+boxes.forEach(function (bx) {
+    bx.innerHTML = `<p>Soy un párrafo</p>`;
+});
+
+console.log(boxes[0].innerHTML);
