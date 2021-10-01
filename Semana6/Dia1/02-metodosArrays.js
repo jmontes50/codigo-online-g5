@@ -54,3 +54,14 @@ let puedePasar = conductores.filter(function (driver) {
 });
 
 console.log(puedePasar);
+
+let dniDB = ["42144143", "12345678", "76543210"];
+
+let encontrado = dniDB.find(function (doc) {
+    // return doc == "12345678";
+    if (doc.includes("44")) {
+        return doc;
+    }
+});
+
+console.log(encontrado);
