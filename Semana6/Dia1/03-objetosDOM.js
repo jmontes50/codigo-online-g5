@@ -117,4 +117,5 @@ imagen.setAttribute("src", "https://picsum.photos/200/300");
 //add("nombreclase")
 lista.classList.add("resaltado");
 lista.classList.add("redondeado");
+// lista.classList.add("verdecito");fdgdfg
 lista.classList.remove("resaltado");
