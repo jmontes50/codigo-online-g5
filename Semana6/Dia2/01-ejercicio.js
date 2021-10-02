@@ -339,3 +339,26 @@ let peliculas = [
         title: "Batman: Death in the Family",
     },
 ];
+
+/**
+ * 1. Qué datos necesito?
+ * NúmeroOrden, Id, Nombre, Año Lanzamiendo e Idioma
+ * 2. De donde obtengo los datos?
+ * Indice, id, title, release_date, original_language
+ * 3. Los datos estan el formato necesario para lo que necesito???
+ * Hay que convertirlo a algo que entienda el Navegador
+ * 4. Cómo los convertimos???
+ * innerHTML, appendChild
+ */
+
+let tbody = document.getElementById("tbody");
+
+peliculas.forEach(function (peli, indice) {
+    let tr = document.createElement("tr");
+    tr.innerHTML = `<td>${indice + 1}</td>
+					<td>${peli.id}</td>
+					<td>${peli.title}</td>
+					<td>${peli.release_date}</td>
+					<td>${peli.original_language}</td>`;
+    tbody.appendChild(tr);
+});
