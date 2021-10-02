@@ -36,5 +36,8 @@ function dibujarTareas() {
         let li = document.createElement("li");
         li.innerText = item;
         ulTareas.appendChild(li);
+
+        //Agregar 01 evento por cada item
+        li.addEventListener("dblclick", function () {});
     });
 }
