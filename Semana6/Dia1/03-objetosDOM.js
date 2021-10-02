@@ -104,3 +104,10 @@ series.forEach(function (programaTv) {
 // console.log(textoLI);
 
 lista.innerHTML = textoLI;
+
+let imagen = document.createElement("img");
+
+divContenido.appendChild(imagen);
+
+//setAttribute("nombre_attr","valor_attr")
+imagen.setAttribute("src", "https://picsum.photos/200/300");
