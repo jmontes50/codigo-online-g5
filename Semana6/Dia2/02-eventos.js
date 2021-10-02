@@ -77,3 +77,20 @@ function Mostrar() {
 }
 
 btnVer.addEventListener("click", Mostrar);
+
+//Capturar eventos
+
+let irAGoogle = document.createElement("a");
+
+irAGoogle.setAttribute("href", "https://google.com");
+
+irAGoogle.innerText = "Llevame a Google";
+
+divContenido.appendChild(irAGoogle);
+
+///----
+//previene la acción por defecto de un evento, preventDefault()
+irAGoogle.addEventListener("click", function (evento) {
+    evento.preventDefault();
+    console.log(evento);
+});
