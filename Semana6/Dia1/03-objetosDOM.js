@@ -71,3 +71,36 @@ boxes.forEach(function (bx) {
 });
 
 console.log(boxes[0].innerHTML);
+
+//CREAR ELEMENTOS
+let series = [
+    "Squid Game",
+    "Pasión de Gavilanes",
+    "Dark",
+    "Billions",
+    "Got",
+    "Suits",
+    "Mr. Robot",
+    "House of dragons",
+    "Chernobyl",
+    "Breaking Bad",
+    "Lupin",
+];
+
+let divContenido = document.getElementById("contenido");
+
+//createElement("etiqueta") :"p","ul","h1","td"
+let lista = document.createElement("ul");
+
+//agregando ese elemento como hijo
+//push a un elemento ya existente
+divContenido.appendChild(lista);
+
+let textoLI = "";
+series.forEach(function (programaTv) {
+    textoLI = textoLI + `<li>${programaTv}</li>`;
+});
+
+// console.log(textoLI);
+
+lista.innerHTML = textoLI;
