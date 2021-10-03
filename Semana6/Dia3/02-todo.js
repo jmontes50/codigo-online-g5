@@ -32,12 +32,17 @@ function dibujarTareas() {
     //cada vez que se ejecute dibujarTareas lo primro que hago es decir que el contenido HTML va a ser "" nada
     ulTareas.innerHTML = "";
     //se va encargar de dibujar las tareas
-    tareas.forEach(function (item) {
+    tareas.forEach(function (item, posicion) {
         let li = document.createElement("li");
         li.innerText = item;
         ulTareas.appendChild(li);
 
         //Agregar 01 evento por cada item
-        li.addEventListener("dblclick", function () {});
+        li.addEventListener("dblclick", function () {
+            //la idea es que esto nos permita eliminar una tarea
+            tareas.splice(posicion, 1);
+            // console.log("después de eliminar", tareas);
+            dibujarTareas();
+        });
     });
 }
