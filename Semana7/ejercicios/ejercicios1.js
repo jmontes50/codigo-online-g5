@@ -180,12 +180,14 @@ function calcularReporte(arrVentas) {
             T3 += arrVentas[i].precio;
         }
     }
-    return {
+
+    let reporte = {
         mayorAMil: T1,
         mayorAQuinientos: T2,
         menorAQuinientos: T3,
         totalGlobal: T1 + T2 + T3,
     };
+    return reporte;
 }
 
 console.table(calcularReporte(ventas));
