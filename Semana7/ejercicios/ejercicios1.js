@@ -44,16 +44,16 @@ function verificarRUC(ruc) {
 
 // console.log(verificarRUC("10710093585"));
 
-let pagoHora = +prompt("cuanto es el pago por hora?");
+// let pagoHora = +prompt("cuanto es el pago por hora?");
 
-let totalHoras = 0;
+// let totalHoras = 0;
 
-for (let i = 1; i <= 6; i++) {
-    let cantDiaria = +prompt("cuantas horas fueron hoy?");
-    totalHoras += cantDiaria;
-}
+// for (let i = 1; i <= 6; i++) {
+//     let cantDiaria = +prompt("cuantas horas fueron hoy?");
+//     totalHoras += cantDiaria;
+// }
 
-console.log(`El trabajador tiene ${totalHoras} horas trabajadas con un pago de S/ ${totalHoras * pagoHora}`);
+// console.log(`El trabajador tiene ${totalHoras} horas trabajadas con un pago de S/ ${totalHoras * pagoHora}`);
 
 //
 
@@ -89,3 +89,43 @@ let productos = [
         materiaPrima: 200,
     },
 ];
+
+function calcularManoDeObra(clave, costoMP) {
+    console.log("ejecutando mano de obra");
+    if (clave == 3 || clave == 4) {
+        return costoMP * 0.75;
+    } else if (clave == 1 || clave == 5) {
+        return costoMP * 0.8;
+    } else if (clave == 2 || clave == 6) {
+        return costoMP * 0.85;
+    }
+}
+
+function calcularCostoFabricacion(clave, costoMP) {
+    console.log("ejecutando costo fabricacion");
+    if (clave == 2 || clave == 5) {
+        return costoMP * 0.3;
+    } else if (clave == 3 || clave == 6) {
+        return costoMP * 0.35;
+    } else if (clave == 1 || clave == 4) {
+        return costoMP * 0.28;
+    }
+}
+
+function calcularCostos(arrProductos) {
+    let cProduccion = 0;
+    for (let i = 0; i < arrProductos.length; i++) {
+        //enfoquemonos en la mano de obra
+        let costoMP = arrProductos[i].materiaPrima;
+        console.log("MP", costoMP);
+        let clave = arrProductos[i].clave;
+        let costoMO = calcularManoDeObra(clave, costoMP);
+        let costoCF = calcularCostoFabricacion(clave, costoMP);
+
+        cProduccion += costoMP + costoMO + costoCF;
+        // console.log(`El costo total de ${arrProductos[i].nombre} es S/ ${cProduccion}`);
+    }
+    return cProduccion;
+}
+
+console.log(calcularCostos(productos));
