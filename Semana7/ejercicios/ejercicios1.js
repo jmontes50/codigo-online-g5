@@ -42,4 +42,50 @@ function verificarRUC(ruc) {
     return false;
 }
 
-console.log(verificarRUC("10710093585"));
+// console.log(verificarRUC("10710093585"));
+
+let pagoHora = +prompt("cuanto es el pago por hora?");
+
+let totalHoras = 0;
+
+for (let i = 1; i <= 6; i++) {
+    let cantDiaria = +prompt("cuantas horas fueron hoy?");
+    totalHoras += cantDiaria;
+}
+
+console.log(`El trabajador tiene ${totalHoras} horas trabajadas con un pago de S/ ${totalHoras * pagoHora}`);
+
+//
+
+let productos = [
+    {
+        nombre: "Audifonos",
+        clave: 1,
+        materiaPrima: 20,
+    },
+    {
+        nombre: "Funda para movil",
+        clave: 2,
+        materiaPrima: 10,
+    },
+    {
+        nombre: "USB",
+        clave: 3,
+        materiaPrima: 15,
+    },
+    {
+        nombre: "Mouse Gamer",
+        clave: 6,
+        materiaPrima: 30,
+    },
+    {
+        nombre: "Teclado",
+        clave: 4,
+        materiaPrima: 120,
+    },
+    {
+        nombre: "Gráfica",
+        clave: 5,
+        materiaPrima: 200,
+    },
+];
