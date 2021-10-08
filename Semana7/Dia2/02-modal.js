@@ -4,6 +4,13 @@ let miModal = new bootstrap.Modal(document.getElementById("miModal"));
 
 console.log(miModal);
 
-setTimeout(function () {
+let btnAbrir = document.getElementById("btnAbrir");
+
+btnAbrir.addEventListener("click", function () {
+    //metodo que tiene modal de bootstrap, tiene el metodo show()
     miModal.show();
-}, 5000);
+});
+
+// setTimeout(function () {
+//     miModal.show();
+// }, 5000);
