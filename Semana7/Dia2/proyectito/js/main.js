@@ -65,6 +65,8 @@ let listaPlatillos = [
 //1.
 let divContenido = document.getElementById("contenido");
 
+let carrito = [];
+
 function dibujarTarjetas() {
     //va a representar el HTML de las tarjetas que quiero representar pero en un string
     let htmlTarjetas = "";
@@ -81,8 +83,8 @@ function dibujarTarjetas() {
 					<p>${plato.descripcion}</p>
 					<div class="precio">
 						<span>S/ ${plato.precio}</span>
-						<button class="btn-agregar">
-						Agregar
+						<button class="btn-agregar" data-idplato="${plato.id}">
+							Agregar
 						</button>
 					</div>
 				</div>
@@ -92,3 +94,26 @@ function dibujarTarjetas() {
 }
 
 dibujarTarjetas();
+
+//OBteniendo botones agregar
+
+let botonesAgregar = document.querySelectorAll(".btn-agregar");
+
+botonesAgregar.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        //getAttribute me da el valor de un atribute que indiquemos
+        let idObtenido = +boton.getAttribute("data-idplato");
+        // console.log(idObtenido);
+        let platoEncontrado = buscarPlatoPorId(idObtenido);
+        // console.table(platoEncontrado);
+        carrito.push(platoEncontrado);
+        console.log(carrito);
+    });
+});
+
+function buscarPlatoPorId(id) {
+    let platilloEncontrado = listaPlatillos.find(function (plato) {
+        return plato.id == id;
+    });
+    return platilloEncontrado;
+}
