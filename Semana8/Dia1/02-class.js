@@ -1,11 +1,11 @@
 //class => molde, plano, fábrica
 class Pokemon {
     //caracteristicas que tiene este plano
-    Nombre;
-    Tipo;
-    Ataque;
-    Defensa;
-    PuntosVida;
+    // Nombre;
+    // Tipo;
+    // Ataque;
+    // Defensa;
+    // PuntosVida;
 
     //métodos, directamente por su nombre
     //Y TODA CLASE va a tener un método constructor
