@@ -25,3 +25,16 @@ let celular = {
         console.log("tururu");
     },
 };
+
+//tengo que saber que propiedades tiene el objeto - requisito
+
+// let screen = celular.pantalla
+
+// let { pantalla, encender, marca, memoria, color, camara } = celular;
+
+let { pantalla, encender, marca, color } = celular;
+
+console.log(pantalla);
+encender();
+console.log(color);
+console.log(marca);
