@@ -29,5 +29,8 @@ fetch("https://reqres.in/api/users", cabecera)
         return respuesta.json();
     })
     .then((usuarioCreado) => {
-        console.log(usuarioCreado);
+        console.table(usuarioCreado);
+    })
+    .catch((error) => {
+        console.log(error);
     });
