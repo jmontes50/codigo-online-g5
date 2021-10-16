@@ -23,3 +23,11 @@ let cabecera = {
     },
     body: JSON.stringify(nuevoUsuario), //data,carga, pero hay que transformarlo a JSON
 };
+
+fetch("https://reqres.in/api/users", cabecera)
+    .then((respuesta) => {
+        return respuesta.json();
+    })
+    .then((usuarioCreado) => {
+        console.log(usuarioCreado);
+    });
