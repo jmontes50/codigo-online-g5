@@ -27,3 +27,22 @@ let cubrirTorta = () => {
         }, 4000);
     });
 };
+
+//comencemos por la primera tarea a ejecutar
+hornearTorta()
+    .then((tortaHorneada) => {
+        //good, exito, resolve
+        console.log(tortaHorneada);
+        //tuvimos exito con la torta, entonces vamos por la sgte.
+        //retornar otra promesa
+        return prepararGlaseado();
+    })
+    .then((glaseadoListo) => {
+        //este then es de prepararGlaseado
+        console.log(glaseadoListo);
+        return cubrirTorta();
+    })
+    .then((tortaDecorada) => {
+        // este then es de cubrirTorta
+        console.log(tortaDecorada);
+    });
