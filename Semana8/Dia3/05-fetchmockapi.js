@@ -10,8 +10,10 @@ const obtenerProductos = async () => {
     }
 };
 
+//he creado un selector para la etqieuta <body></body>
 let body = document.querySelector("body");
 
+//me devuelve una promesa
 obtenerProductos()
     .then((misProductos) => {
         let htmlProductos = "";
@@ -26,7 +28,7 @@ obtenerProductos()
 		`;
         });
         body.innerHTML = `<table border="1">
-						${htmlProductos}
-					</table>`;
+								${htmlProductos}
+							</table>`;
     })
     .catch((err) => console.log(err));
