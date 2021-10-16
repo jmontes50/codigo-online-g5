@@ -13,8 +13,8 @@ let hornearTorta = () => {
 let prepararGlaseado = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve("Glaseado Listo!"); //va a ser exitoso
-            // reject("se quemo el microondas")
+            // resolve("Glaseado Listo!"); //va a ser exitoso
+            reject("se quemo el microondas");
         }, 3000);
     });
 };
@@ -23,7 +23,7 @@ let cubrirTorta = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve("Torta Decorada");
-            // reject("Pide rappi noma")
+            // reject("Pide rappi noma");
         }, 4000);
     });
 };
@@ -45,4 +45,10 @@ hornearTorta()
     .then((tortaDecorada) => {
         // este then es de cubrirTorta
         console.log(tortaDecorada);
+    })
+    .catch((tortaMala) => {
+        //funciona para todas las promesas que esten detrás
+        //CUANDO DETECTA UN REJECT EN CUALQUIERA DE LAS PROMESAS
+        //SE CORTA EL PROCESO
+        console.log(tortaMala);
     });
