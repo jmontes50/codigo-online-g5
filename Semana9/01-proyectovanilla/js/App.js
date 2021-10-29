@@ -8,6 +8,7 @@
 
 //importar
 import { obtenerProductos } from "./Comunicacion.js"; //importamos la función obtenerProductos
+import { imprimirProductos } from "./Interfaz.js";
 
 //variables globales - los elementos del DOM
 
@@ -16,6 +17,7 @@ const getProductos = async () => {
     try {
         let productosObtenidos = await obtenerProductos(); //devuelve promesa, por el await
         console.log(productosObtenidos);
+        imprimirProductos(productosObtenidos);
     } catch (error) {
         console.log(error);
     }
