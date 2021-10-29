@@ -15,7 +15,7 @@ const getProductos = async () => {
     //por eso el async
     try {
         let productosObtenidos = await obtenerProductos(); //devuelve promesa, por el await
-        console.table(productosObtenidos);
+        console.log(productosObtenidos);
     } catch (error) {
         console.log(error);
     }
