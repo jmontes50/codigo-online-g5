@@ -13,7 +13,7 @@
  */
 
 //importar
-import { obtenerProductos } from "./Comunicacion.js"; //importamos la función obtenerProductos
+import { obtenerProductos, crearProducto } from "./Comunicacion.js"; //importamos la función obtenerProductos
 import { imprimirProductos } from "./Interfaz.js";
 
 //variables globales - los elementos del DOM
@@ -40,14 +40,20 @@ btnCrear.addEventListener("click", () => {
     modalCrear.show();
 });
 
-btnGuardar.addEventListener("click", () => {
+btnGuardar.addEventListener("click", async () => {
     let formulario = document.getElementById("formCrear");
+    //nuevoProducto tiene los datos del form
     let nuevoProducto = {
         nombre: formulario.nombre.value, //por el name="nombre" obtiene el value de cada input dentro del form
         descripcion: formulario.descripcion.value,
         precio: formulario.precio.value,
     };
-
-    console.log(nuevoProducto);
+    //utilizo la funcion crearProducto de Comunicacion y le paso el objeto con la info de los inputs
+    try {
+        let productoCreado = await crearProducto(nuevoProducto);
+    } catch (error) {
+        console.log(error);
+    }
+    // console.log(nuevoProducto);
     //POST
 });
