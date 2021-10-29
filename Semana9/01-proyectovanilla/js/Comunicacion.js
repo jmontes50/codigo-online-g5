@@ -16,5 +16,11 @@ const obtenerProductos = async () => {
     }
 };
 
+const crearProducto = async () => {
+    try {
+        //POST
+    } catch (error) {}
+};
+
 //este es el export
 export { obtenerProductos };

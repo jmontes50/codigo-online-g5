@@ -5,9 +5,9 @@
  * 3. Convertir esos datos a HTML entendible por el navegador ✔
  * ...
  * 4. Crear un Producto desde el navegador
- * 4.1 Detectar el evento click de un botón
- * 4.2 Vamos a abrir un modal de Bootstrap
- * 4.3 Obtener los datos del formulario que estará dentro del modal
+ * 4.1 Detectar el evento click de un botón ✔
+ * 4.2 Vamos a abrir un modal de Bootstrap ✔
+ * 4.3 Obtener los datos del formulario que estará dentro del modal ✔
  * 4.4 Con esa info convertirla a un JSON y enviarla a mockapi con un POST
  *
  */
