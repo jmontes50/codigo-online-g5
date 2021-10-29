@@ -15,3 +15,6 @@ const obtenerProductos = async () => {
         throw error;
     }
 };
+
+//este es el export
+export { obtenerProductos };
