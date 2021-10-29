@@ -7,13 +7,14 @@
  */
 
 //importar
-import { obtenerProductos } from "./Comunicacion";
+import { obtenerProductos } from "./Comunicacion.js"; //importamos la función obtenerProductos
 
 //variables globales - los elementos del DOM
 
 const getProductos = async () => {
+    //por eso el async
     try {
-        let productosObtenidos = await obtenerProductos();
+        let productosObtenidos = await obtenerProductos(); //devuelve promesa, por el await
         console.table(productosObtenidos);
     } catch (error) {
         console.log(error);
