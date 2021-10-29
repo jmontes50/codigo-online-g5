@@ -44,6 +44,7 @@ btnGuardar.addEventListener("click", async () => {
     let formulario = document.getElementById("formCrear");
     //nuevoProducto tiene los datos del form
     let nuevoProducto = {
+        //formulario.name_del_input.value
         nombre: formulario.nombre.value, //por el name="nombre" obtiene el value de cada input dentro del form
         descripcion: formulario.descripcion.value,
         precio: formulario.precio.value,
@@ -51,6 +52,10 @@ btnGuardar.addEventListener("click", async () => {
     //utilizo la funcion crearProducto de Comunicacion y le paso el objeto con la info de los inputs
     try {
         let productoCreado = await crearProducto(nuevoProducto);
+        //ÉXITO CREANDO EL PRODUCTO
+        formulario.reset(); //Limpia los campos del formulario, los input
+        modalCrear.hide(); //modal escondete
+        getProductos(); //para que vuelva a obtener los productos y aparezca mi producto creado
     } catch (error) {
         console.log(error);
     }
