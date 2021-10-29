@@ -33,3 +33,8 @@ const getProductos = async () => {
 };
 
 getProductos();
+
+//llamar al evento click de btnCrear
+btnCrear.addEventListener("click", () => {
+    modalCrear.show();
+});
