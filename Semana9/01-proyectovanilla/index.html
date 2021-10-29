@@ -34,11 +34,24 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>Modal body text goes here.</p>
+                        <form id="formCrear">
+                            <div>
+                                <label>Nombre Producto:</label>
+                                <input type="text" class="form-control" name="nombre" />
+                            </div>
+                            <div>
+                                <label>Descripción Producto</label>
+                                <input type="text" class="form-control" name="descripcion" />
+                            </div>
+                            <div>
+                                <label>Precio Producto</label>
+                                <input type="number" class="form-control" name="precio" />
+                            </div>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-primary" id="btnGuardar">Guardar Producto</button>
                     </div>
                 </div>
             </div>
