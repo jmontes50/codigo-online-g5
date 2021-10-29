@@ -39,3 +39,15 @@ getProductos();
 btnCrear.addEventListener("click", () => {
     modalCrear.show();
 });
+
+btnGuardar.addEventListener("click", () => {
+    let formulario = document.getElementById("formCrear");
+    let nuevoProducto = {
+        nombre: formulario.nombre.value, //por el name="nombre" obtiene el value de cada input dentro del form
+        descripcion: formulario.descripcion.value,
+        precio: formulario.precio.value,
+    };
+
+    console.log(nuevoProducto);
+    //POST
+});
