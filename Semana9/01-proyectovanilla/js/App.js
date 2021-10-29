@@ -20,6 +20,7 @@ import { imprimirProductos } from "./Interfaz.js";
 let btnCrear = document.getElementById("btnCrear");
 // let modalCrear = document.getElementById("modalCrear");
 let modalCrear = new bootstrap.Modal(document.getElementById("modalCrear")); //convertirlo en un obj de Bootstrap
+let btnGuardar = document.getElementById("btnGuardar");
 
 const getProductos = async () => {
     //por eso el async
