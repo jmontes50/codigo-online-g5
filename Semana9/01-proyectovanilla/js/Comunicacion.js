@@ -16,11 +16,21 @@ const obtenerProductos = async () => {
     }
 };
 
-const crearProducto = async () => {
+const crearProducto = async (objProducto) => {
     try {
         //POST
-    } catch (error) {}
+        let configuracion = {
+            method: "POST",
+            body: JSON.stringify(objProducto), //de obj de JS lo convertimos a JSON que es texto
+            headers: { "Content-Type": "application/json" }, //API sepa como interpretarlo
+        };
+        const respuesta = await fetch(URL, configuracion);
+        const productoCreado = await respuesta.json();
+        return productoCreado;
+    } catch (error) {
+        throw error;
+    }
 };
 
 //este es el export
-export { obtenerProductos };
+export { obtenerProductos, crearProducto };
