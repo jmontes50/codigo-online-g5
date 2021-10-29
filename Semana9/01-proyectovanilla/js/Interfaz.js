@@ -18,5 +18,8 @@ const imprimirProductos = (arregloProductos) => {
 								</div>
 							</div>
 						</div>`;
+        cardsProductos = cardsProductos + cardProd; //concatetando una y otra vez en forma de HTML String
     });
+
+    divProductos.innerHTML = cardsProductos; //el contenido HTML de divProductos será cardsProductos rellenado
 };
