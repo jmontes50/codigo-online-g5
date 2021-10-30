@@ -1,7 +1,9 @@
 import { useState } from "react";
+import Main from "./components/Main";
 
+//App es el componente principal
 function App() {
-    // 1. un componente solamente debe retornar 01
+    // 1. un componente solamente debe retornar 01 elemento
     // 2. toda etiqueta debe estar cerrada
     // 3. si deseo agregar JS, en el JSX (HTML), hay que poner {}
 
@@ -18,20 +20,25 @@ function App() {
     };
 
     return (
-        <header>
-            <h1>{titulo}</h1>
-            <p>{contador}</p>
-            <img src="https://picsum.photos/200" alt="imagen" />
-            <br />
-            <button onClick={actualizarContador}>Aumentar</button>
-            <button
-                onClick={() => {
-                    setTitulo("Título con React");
-                }}
-            >
-                Cambiar H1
-            </button>
-        </header>
+        <>
+            <header>
+                <h1>{titulo}</h1>
+                <p>{contador}</p>
+                <img src="https://picsum.photos/200" alt="imagen" />
+                <br />
+                <button onClick={actualizarContador}>Aumentar</button>
+                <button
+                    onClick={() => {
+                        setTitulo("Título con React");
+                    }}
+                >
+                    Cambiar H1
+                </button>
+                <hr />
+                {/* para llamar componentes que tengan JSX, los invoco como si fueran etiquetas de HTML con la misma sintaxis */}
+            </header>
+            <Main />
+        </>
     );
 }
 
