@@ -93,6 +93,7 @@ function App() {
             </div>
 
             {/* renderizar listas o arreglos */}
+            {/* cuando renderizemos arreglos necesitamos un key x cada item y tiene que ser único el key */}
             <ul>
                 {productos.map(({ nombre, precio }, i) => (
                     <li key={i}>{`${nombre} - ${precio}`}</li>
