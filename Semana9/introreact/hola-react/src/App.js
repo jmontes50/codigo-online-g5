@@ -7,8 +7,9 @@ function App() {
 
     //const [estado, funcEstado] = useState(estado_inicial)
     const [contador, setContador] = useState(0);
+    const [titulo, setTitulo] = useState("Mi Título");
 
-    let titulo = "Titulo Codigo";
+    // let titulo = "Titulo Codigo";
 
     // contador = 5;
 
@@ -23,6 +24,13 @@ function App() {
             <img src="https://picsum.photos/200" alt="imagen" />
             <br />
             <button onClick={actualizarContador}>Aumentar</button>
+            <button
+                onClick={() => {
+                    setTitulo("Título con React");
+                }}
+            >
+                Cambiar H1
+            </button>
         </header>
     );
 }
