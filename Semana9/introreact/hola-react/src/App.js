@@ -94,8 +94,8 @@ function App() {
 
             {/* renderizar listas o arreglos */}
             <ul>
-                {productos.map((prod) => {
-                    return <li>{`${prod.nombre} - ${prod.precio}`}</li>;
+                {productos.map(({ nombre, precio }) => {
+                    return <li>{`${nombre} - ${precio}`}</li>;
                 })}
             </ul>
         </>
