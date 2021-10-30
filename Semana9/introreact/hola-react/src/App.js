@@ -37,7 +37,8 @@ function App() {
                 <hr />
                 {/* para llamar componentes que tengan JSX, los invoco como si fueran etiquetas de HTML con la misma sintaxis */}
             </header>
-            <Main />
+            {/* <Nombre_del_componente /> */}
+            <Main subtitulo="Yo soy el subtitulo" mostrarInfo={true} numero={1} />
         </>
     );
 }
