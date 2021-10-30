@@ -2,6 +2,11 @@ import { useState } from "react";
 
 export default function AnadirTarea({ setTareas, tareas }) {
     const [texto, setTexto] = useState("");
+
+    const agregarNuevaTarea = () => {
+        setTareas([...tareas, texto]);
+    };
+
     return (
         <div class="form-group">
             <input
@@ -12,7 +17,9 @@ export default function AnadirTarea({ setTareas, tareas }) {
                     setTexto(e.target.value);
                 }}
             />
-            <button class="btn btn-primary">Agregar Tarea</button>
+            <button class="btn btn-primary" onClick={agregarNuevaTarea}>
+                Agregar Tarea
+            </button>
         </div>
     );
 }
