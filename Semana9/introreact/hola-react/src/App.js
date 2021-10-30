@@ -64,8 +64,11 @@ function App() {
                     type="text"
                     placeholder="ingrese texto..."
                     value={texto}
+                    // onChange={(e) => {
+                    //     actualizarTexto(e);
+                    // }}
                     onChange={(e) => {
-                        actualizarTexto(e);
+                        setTexto(e.target.value);
                     }}
                 />
             </div>
