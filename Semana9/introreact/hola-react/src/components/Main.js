@@ -6,6 +6,9 @@
 //.3.2 JSX utiliza (<html></html>) para indicar que dibujará elementos
 //.4 tiene que exportarse por defecto, para que otros componentes, lo puedan reutilizar
 
+//los props se reciben en el hijo con el nombre del "atributo" que se le puso en el componente Padre
+//estos props son como los parámetros de una función
+//<Main subtitulo="ewrw" tituloPadre={estado} actualizarInfo={setEstado} />
 function Main({subtitulo, tituloPadre, actualizarTitulo}) {
 
     return (<main>
