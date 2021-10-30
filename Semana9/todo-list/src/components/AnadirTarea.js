@@ -8,16 +8,16 @@ export default function AnadirTarea({ setTareas, tareas }) {
     };
 
     return (
-        <div class="form-group">
+        <div className="form-group">
             <input
                 type="text"
-                class="form-control"
+                className="form-control"
                 value={texto}
                 onChange={(e) => {
                     setTexto(e.target.value);
                 }}
             />
-            <button class="btn btn-primary" onClick={agregarNuevaTarea}>
+            <button className="btn btn-primary" onClick={agregarNuevaTarea}>
                 Agregar Tarea
             </button>
         </div>
