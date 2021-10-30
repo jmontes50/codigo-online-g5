@@ -28,6 +28,25 @@ function App() {
         setTexto(e.target.value);
     };
 
+    const productos = [
+        {
+            nombre: "Peluche",
+            precio: 50,
+        },
+        {
+            nombre: "Furro 3000",
+            precio: 1,
+        },
+        {
+            nombre: "Pingüino",
+            precio: 100,
+        },
+        {
+            nombre: "GPU RTX 3060",
+            precio: 3000,
+        },
+    ];
+
     return (
         <>
             <header>
@@ -72,6 +91,13 @@ function App() {
                     }}
                 />
             </div>
+
+            {/* renderizar listas o arreglos */}
+            <ul>
+                {productos.map((prod) => {
+                    return <li>{`${prod.nombre} - ${prod.precio}`}</li>;
+                })}
+            </ul>
         </>
     );
 }
