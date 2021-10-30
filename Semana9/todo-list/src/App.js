@@ -9,7 +9,7 @@ export default function App() {
 
     return (
         <div>
-            <AnadirTarea />
+            <AnadirTarea setTareas={setTareas} tareas={tareas} />
             <ListaTareas tareas={tareas} />
         </div>
     );

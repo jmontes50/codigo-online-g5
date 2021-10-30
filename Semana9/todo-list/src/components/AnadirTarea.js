@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AnadirTarea() {
+export default function AnadirTarea({ setTareas, tareas }) {
     const [texto, setTexto] = useState("");
     return (
         <div class="form-group">
