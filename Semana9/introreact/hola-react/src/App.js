@@ -10,6 +10,7 @@ function App() {
     //const [estado, funcEstado] = useState(estado_inicial)
     const [contador, setContador] = useState(0);
     const [titulo, setTitulo] = useState("Mi Título");
+    const [texto, setTexto] = useState("textito");
 
     //Levantamiento de estado - LiftingState
 
@@ -19,6 +20,12 @@ function App() {
 
     const actualizarContador = () => {
         setContador(contador + 1);
+    };
+
+    const actualizarTexto = (e) => {
+        console.log(e);
+        //actualizar el estado
+        setTexto(e.target.value);
     };
 
     return (
@@ -49,6 +56,19 @@ function App() {
             />
 
             <Main subtitulo="Segundo subtitulooooooo" mostrarInfo={false} numero={2} />
+
+            {/* componentes controlados */}
+            {/* todo input debe estar amarrado a un estado */}
+            <div>
+                <input
+                    type="text"
+                    placeholder="ingrese texto..."
+                    value={texto}
+                    onChange={(e) => {
+                        actualizarTexto(e);
+                    }}
+                />
+            </div>
         </>
     );
 }
