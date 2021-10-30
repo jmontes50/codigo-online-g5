@@ -13,6 +13,10 @@ function Main(props) {
 		<div>
 			<h2>{props.subtitulo}</h2>
 			<p>Lorem ipsum dolor sit amet.</p>
+			<p>El titulo de App es {props.tituloPadre}</p>
+			<button onClick={() => {props.actualizarTitulo("Titulo desde Main")}}>
+				Actualizar desde Main
+			</button>
 		</div>
 	</main>);
 }

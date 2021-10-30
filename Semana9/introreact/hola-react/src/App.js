@@ -11,6 +11,8 @@ function App() {
     const [contador, setContador] = useState(0);
     const [titulo, setTitulo] = useState("Mi Título");
 
+    //Levantamiento de estado - LiftingState
+
     // let titulo = "Titulo Codigo";
 
     // contador = 5;
@@ -38,7 +40,15 @@ function App() {
                 {/* para llamar componentes que tengan JSX, los invoco como si fueran etiquetas de HTML con la misma sintaxis */}
             </header>
             {/* <Nombre_del_componente /> */}
-            <Main subtitulo="Yo soy el subtitulo" mostrarInfo={true} numero={1} />
+            <Main
+                subtitulo="Yo soy el subtitulo"
+                mostrarInfo={true}
+                numero={1}
+                tituloPadre={titulo}
+                actualizarTitulo={setTitulo}
+            />
+
+            <Main subtitulo="Segundo subtitulooooooo" mostrarInfo={false} numero={2} />
         </>
     );
 }
