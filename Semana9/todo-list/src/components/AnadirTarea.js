@@ -5,6 +5,7 @@ export default function AnadirTarea({ setTareas, tareas }) {
 
     const agregarNuevaTarea = () => {
         setTareas([...tareas, texto]);
+        setTexto("");
     };
 
     return (
