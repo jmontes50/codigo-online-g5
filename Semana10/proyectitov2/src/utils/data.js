@@ -49,3 +49,5 @@ let listaPlatillos = [
         imagen: "https://images.unsplash.com/photo-1614563637806-1d0e645e0940?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
     },
 ];
+
+export { listaPlatillos };

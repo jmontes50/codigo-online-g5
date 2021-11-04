@@ -1,5 +1,9 @@
-import React from "react";
+import Producto from "./Producto";
 
 export default function Main() {
-    return <main></main>;
+    return (
+        <main>
+            <Producto />
+        </main>
+    );
 }
