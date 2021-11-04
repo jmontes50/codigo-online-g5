@@ -16,6 +16,11 @@ let hacerPeticion = (tareaFinal) => {
                 break;
             case 4:
                 console.log("respuesta del server", asistente.readyState); //me avisas cuando el dest. responda
+                console.log("status", asistente.status);
+                console.log("respuesta", asistente.responseText);
+
+                tareaFinal(asistente.responseText);
+
                 break;
             default:
                 console.log("algo paso");
@@ -27,4 +32,8 @@ let hacerPeticion = (tareaFinal) => {
     asistente.send(); //envia la carta
 };
 
-hacerPeticion();
+const convertirJs = (rptaJson) => {
+    console.log(JSON.parse(rptaJson));
+};
+
+hacerPeticion(convertirJs);
