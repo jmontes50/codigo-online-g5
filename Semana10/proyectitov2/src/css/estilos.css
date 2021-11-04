@@ -42,4 +42,18 @@ nav {
 main {
     height: 100%;
     width: 80%;
+    /* trabaja en 2 dimensiones */
+    display: grid;
+    /* cuantas columnas quiero, explicito*/
+    grid-template-columns: repeat(4, 1fr);
+    /* No se exactamente cuantas filas tendre, implicito */
+    grid-auto-rows: 400px;
+    padding: 20px;
+    /* separación entre elementos de grid */
+    gap: 10px;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
 }
