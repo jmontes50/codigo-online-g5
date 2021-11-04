@@ -22,3 +22,20 @@
     height: 100%;
     background-color: #35373e;
 }
+
+.principal {
+    display: flex;
+    height: 100%;
+}
+
+nav {
+    height: 100%;
+    width: 20%;
+    min-width: 200px;
+    padding: 20px;
+}
+
+main {
+    height: 100%;
+    width: 80%;
+}

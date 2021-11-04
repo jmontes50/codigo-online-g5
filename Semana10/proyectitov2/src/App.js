@@ -6,6 +6,7 @@ import "./css/estilos.css";
 //import NombreFunción from "ruta/Nombre_Archivo"
 import Header from "./components/Header";
 import NavSide from "./components/NavSide";
+import Main from "./components/Main";
 
 export default function App() {
     return (
@@ -14,6 +15,7 @@ export default function App() {
                 <Header />
                 <div className="principal">
                     <NavSide />
+                    <Main />
                 </div>
             </div>
             <div className="boleta"></div>
