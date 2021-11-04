@@ -19,6 +19,7 @@ let hacerPeticion = (tareaFinal) => {
                 console.log("status", asistente.status);
                 console.log("respuesta", asistente.responseText);
 
+                //mandas a alguien hacer un encargo y le dices, oye cuando te den la respuesta me llamas pa decirte que hacer
                 tareaFinal(asistente.responseText);
 
                 break;
