@@ -13,7 +13,19 @@ let hacerPeticion = () => {
     });
 };
 
-hacerPeticion().then((rptaTexto) => {
-    console.log("rptaTexto", rptaTexto);
-    console.log("Convertido", JSON.parse(rptaTexto));
-});
+// hacerPeticion().then((rptaTexto) => {
+//     console.log("rptaTexto", rptaTexto);
+//     console.log("Convertido", JSON.parse(rptaTexto));
+// });
+
+const pedirData = async () => {
+    //asincrono, por el async
+    try {
+        let rpta = await hacerPeticion(); //oye esto demora detente aquí
+        console.log(JSON.parse(rpta));
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+pedirData();
