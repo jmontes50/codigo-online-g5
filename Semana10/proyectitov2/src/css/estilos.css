@@ -6,6 +6,10 @@
     border: 1px solid gray;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .contenedor {
     display: flex;
     height: 100vh;
