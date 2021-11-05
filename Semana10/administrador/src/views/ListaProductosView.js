@@ -5,6 +5,7 @@ export default function ListaProductosView() {
     const getProductos = async () => {
         try {
             const productosObtenidos = await obtenerProductos();
+            console.table(productosObtenidos);
         } catch (error) {
             console.log(error);
         }

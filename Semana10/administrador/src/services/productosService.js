@@ -6,10 +6,11 @@ const URL = "https://616b5ead16c3fa001717167c.mockapi.io/productos";
 
 const obtenerProductos = async () => {
     try {
-        const rpta = await axios.get(URL);
-        console.log(rpta);
+        const { data } = await axios.get(URL);
+        // console.log(rpta);
+        return data; //resolve
     } catch (error) {
-        throw error;
+        throw error; //reject
     }
 };
 
