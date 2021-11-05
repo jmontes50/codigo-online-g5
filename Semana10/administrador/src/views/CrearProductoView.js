@@ -16,9 +16,11 @@ export default function CrearProductoView() {
         });
     };
 
+    const manejarSubmit = (e) => {};
+
     return (
         <div>
-            <FormProducto value={value} actualizarInput={actualizarInput} />
+            <FormProducto value={value} actualizarInput={actualizarInput} manejarSubmit={manejarSubmit} />
         </div>
     );
 }
