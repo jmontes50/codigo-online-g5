@@ -8,9 +8,17 @@ export default function CrearProductoView() {
         precio: 0,
     });
 
+    const actualizarInput = (e) => {
+        console.log(e.target.name, e.target.value);
+        setValue({
+            ...value, //cogiendo el estado de value, spreadoperator
+            [e.target.name]: e.target.value,
+        });
+    };
+
     return (
         <div>
-            <FormProducto value={value} />
+            <FormProducto value={value} actualizarInput={actualizarInput} />
         </div>
     );
 }
