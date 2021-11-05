@@ -1,4 +1,5 @@
-export default function FormProducto() {
+export default function FormProducto({ value }) {
+    console.log(value);
     return (
         <div>
             <form>
@@ -14,7 +15,7 @@ export default function FormProducto() {
 
                 <div className="mb-3">
                     <label className="form-label">Precio producto</label>
-                    <input type="text" className="form-control" name="precio" />
+                    <input type="number" className="form-control" name="precio" />
                 </div>
             </form>
         </div>
