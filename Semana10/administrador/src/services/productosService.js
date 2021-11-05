@@ -29,4 +29,4 @@ const crearProducto = async (nuevoProducto) => {
     }
 };
 
-export { obtenerProductos };
+export { obtenerProductos, crearProducto };
