@@ -14,4 +14,19 @@ const obtenerProductos = async () => {
     }
 };
 
+const crearProducto = async (nuevoProducto) => {
+    try {
+        const headers = {
+            "Content-Type": "application/json",
+        };
+        //axios siempre me va devolver la propiedad data, donde esta la rpta del servidor
+        //axios cuando hace POST, PUT necesita no solo la URL
+        //axios.post(URL, objACrear, {headers})
+        const { data } = await axios.post(URL, nuevoProducto, { headers });
+        return data;
+    } catch (error) {
+        throw error;
+    }
+};
+
 export { obtenerProductos };

@@ -33,6 +33,7 @@ export default function ListaProductosView() {
                 <tbody>
                     {productos.map(({ nombre, descripcion, precio }, i) => (
                         <tr key={i}>
+                            {/* RECUERDEN: el key es para ident. elementos. generados de un arreglo */}
                             <td>{nombre}</td>
                             <td>{descripcion}</td>
                             <td>{precio}</td>
