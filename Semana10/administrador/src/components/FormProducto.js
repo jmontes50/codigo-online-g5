@@ -44,6 +44,9 @@ export default function FormProducto({ value, actualizarInput, manejarSubmit }) 
                         }}
                     />
                 </div>
+                <button className="btn btn-primary" type="submit">
+                    Guardar
+                </button>
             </form>
         </div>
     );

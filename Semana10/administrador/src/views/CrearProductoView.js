@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { crearProducto } from "../services/productosService";
 import FormProducto from "../components/FormProducto";
 
 export default function CrearProductoView() {
@@ -16,7 +17,12 @@ export default function CrearProductoView() {
         });
     };
 
-    const manejarSubmit = (e) => {};
+    const manejarSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            await crearProducto(value);
+        } catch (error) {}
+    };
 
     return (
         <div>
