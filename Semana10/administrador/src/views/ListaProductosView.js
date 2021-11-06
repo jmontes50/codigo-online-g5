@@ -48,7 +48,9 @@ export default function ListaProductosView() {
                             <td>{nombre}</td>
                             <td>{descripcion}</td>
                             <td>{precio}</td>
-                            <td></td>
+                            <td>
+                                <button className="btn btn-info">Editar</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
