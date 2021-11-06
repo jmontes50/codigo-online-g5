@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; //<a>
 import { obtenerProductos } from "../services/productosService";
+import Swal from "sweetalert2";
 
 export default function ListaProductosView() {
     const [productos, setProductos] = useState([]);
@@ -13,6 +14,19 @@ export default function ListaProductosView() {
         } catch (error) {
             console.log(error);
         }
+    };
+
+    const verificarEliminar = async (id) => {
+        const respuesta = await Swal.fire({
+            icon: "warning",
+            title: "Desea eliminar el producto?",
+            text: "Esta acción es irreversible",
+            showConfirmButton: true,
+            showDenyButton: true,
+            confirmButtonText: "Sí, Eliminar",
+            denyButtonText: "No, Cancelar",
+        });
+        console.log(respuesta);
     };
 
     useEffect(() => {
