@@ -4,6 +4,8 @@ import { crearProducto } from "../services/productosService";
 import FormProducto from "../components/FormProducto";
 import Swal from "sweetalert2";
 
+let imagen; //básicamente es una variable global que no esta definida
+
 export default function CrearProductoView() {
     const [value, setValue] = useState({
         nombre: "",
@@ -41,9 +43,20 @@ export default function CrearProductoView() {
         }
     };
 
+    const manejarImagen = (e) => {
+        e.preventDefault();
+        // console.log(e.target.files);
+        imagen = e.target.files[0]; //como para utilizar
+    };
+
     return (
         <div>
-            <FormProducto value={value} actualizarInput={actualizarInput} manejarSubmit={manejarSubmit} />
+            <FormProducto
+                value={value}
+                actualizarInput={actualizarInput}
+                manejarSubmit={manejarSubmit}
+                manejarImagen={manejarImagen}
+            />
         </div>
     );
 }

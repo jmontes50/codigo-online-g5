@@ -1,4 +1,8 @@
-export default function FormProducto({ value, actualizarInput, manejarSubmit }) {
+import { useRef } from "react";
+
+export default function FormProducto({ value, actualizarInput, manejarSubmit, manejarImagen }) {
+    const inputFile = useRef(); //es una referencia de react hacia un elemento como si fuera un ID
+
     return (
         <div>
             <form
@@ -44,6 +48,19 @@ export default function FormProducto({ value, actualizarInput, manejarSubmit }) 
                         }}
                     />
                 </div>
+
+                <div className="mb-3">
+                    <label className="form-label">Imagen</label>
+                    <input
+                        type="file"
+                        className="form-control"
+                        ref={inputFile}
+                        onChange={(e) => {
+                            manejarImagen(e);
+                        }}
+                    />
+                </div>
+
                 <button className="btn btn-primary" type="submit">
                     Guardar
                 </button>
