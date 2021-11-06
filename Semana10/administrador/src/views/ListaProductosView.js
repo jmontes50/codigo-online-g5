@@ -42,14 +42,16 @@ export default function ListaProductosView() {
                     </tr>
                 </thead>
                 <tbody>
-                    {productos.map(({ nombre, descripcion, precio }, i) => (
+                    {productos.map(({ nombre, descripcion, precio, id }, i) => (
                         <tr key={i}>
                             {/* RECUERDEN: el key es para ident. elementos. generados de un arreglo */}
                             <td>{nombre}</td>
                             <td>{descripcion}</td>
                             <td>{precio}</td>
                             <td>
-                                <button className="btn btn-info">Editar</button>
+                                <Link className="btn btn-info" to={`/crearproducto/${id}`}>
+                                    Editar
+                                </Link>
                             </td>
                         </tr>
                     ))}
