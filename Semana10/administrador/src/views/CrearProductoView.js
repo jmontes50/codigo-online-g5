@@ -21,7 +21,9 @@ export default function CrearProductoView() {
         e.preventDefault();
         try {
             await crearProducto(value);
-        } catch (error) {}
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
