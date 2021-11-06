@@ -19,6 +19,13 @@ export default function ListaProductosView() {
         getProductos();
     }, []);
 
+    //si quisiera hacerlo en la misma vista crear y ver productos
+    /**const manejarSubmit = async () => {
+		hago la chamba de crear el producto, espero con una await
+		y cuando termine
+		getProductos()
+	}*/
+
     return (
         <div>
             <h1>Productos registrados</h1>
