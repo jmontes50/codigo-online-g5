@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; //<a>
-import { obtenerProductos } from "../services/productosService";
+import { obtenerProductos, eliminarProducto } from "../services/productosService";
 import Swal from "sweetalert2";
 
 export default function ListaProductosView() {
@@ -26,7 +26,19 @@ export default function ListaProductosView() {
             confirmButtonText: "Sí, Eliminar",
             denyButtonText: "No, Cancelar",
         });
-        console.log(respuesta);
+        if (respuesta.isConfirmed) {
+            //si es que el usuario ha confirmado
+            try {
+                await eliminarProducto(id);
+                await Swal.fire({
+                    icon: "success",
+                    title: "Producto eliminado!",
+                });
+                getProductos();
+            } catch (error) {
+                console.log(error);
+            }
+        }
     };
 
     useEffect(() => {
@@ -66,7 +78,14 @@ export default function ListaProductosView() {
                                 <Link className="btn btn-info me-2" to={`/editarproducto/${id}`}>
                                     Editar
                                 </Link>
-                                <button className="btn btn-danger">Eliminar</button>
+                                <button
+                                    className="btn btn-danger"
+                                    onClick={() => {
+                                        verificarEliminar(id);
+                                    }}
+                                >
+                                    Eliminar
+                                </button>
                             </td>
                         </tr>
                     ))}
