@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import FormProducto from "../components/FormProducto";
-import { obtenerProductoPorId } from "../services/productosService";
+import { obtenerProductoPorId, editarProductoPorId } from "../services/productosService";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
@@ -13,6 +13,7 @@ export default function EditarProductoView() {
     });
 
     const { id } = useParams(); //1. con esto tenemos el id de la URL
+    const navigate = useNavigate();
 
     const getProducto = async () => {
         try {
@@ -22,11 +23,20 @@ export default function EditarProductoView() {
             console.log(error);
         }
     };
-
-    const manejarSubmit = (e) => {
+    const manejarSubmit = async (e) => {
         e.preventDefault();
+        try {
+            await editarProductoPorId(id, value);
+            await Swal.fire({
+                icon: "success",
+                title: "Éxito",
+                text: "Producto Editado Exitosamente",
+            });
+            navigate("/");
+        } catch (error) {
+            console.log(error);
+        }
     };
-
     const actualizarInput = (e) => {
         console.log(e.target.name, e.target.value);
         setValue({
@@ -34,14 +44,13 @@ export default function EditarProductoView() {
             [e.target.name]: e.target.value,
         });
     };
-
     useEffect(() => {
         getProducto(); //3. con un useEffect llamamos a la función que me trae 01 producto por su ID
     }, []);
 
     return (
         <div>
-            <FormProducto value={value} actualizarInput={actualizarInput} />
+            <FormProducto value={value} actualizarInput={actualizarInput} manejarSubmit={manejarSubmit} />
         </div>
     );
 }
