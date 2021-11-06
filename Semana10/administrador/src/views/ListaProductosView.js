@@ -49,7 +49,7 @@ export default function ListaProductosView() {
                             <td>{descripcion}</td>
                             <td>{precio}</td>
                             <td>
-                                <Link className="btn btn-info" to={`/crearproducto/${id}`}>
+                                <Link className="btn btn-info" to={`/editarproducto/${id}`}>
                                     Editar
                                 </Link>
                             </td>
