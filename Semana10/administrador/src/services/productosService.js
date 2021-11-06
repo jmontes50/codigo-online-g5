@@ -51,4 +51,13 @@ const editarProductoPorId = async (id, objProducto) => {
     }
 };
 
-export { obtenerProductos, crearProducto, obtenerProductoPorId, editarProductoPorId };
+const eliminarProducto = async (id) => {
+    try {
+        await axios.delete(`${URL}/${id}`);
+        return "producto eliminado";
+    } catch (error) {
+        throw error;
+    }
+};
+
+export { obtenerProductos, crearProducto, obtenerProductoPorId, editarProductoPorId, eliminarProducto };

@@ -49,9 +49,10 @@ export default function ListaProductosView() {
                             <td>{descripcion}</td>
                             <td>{precio}</td>
                             <td>
-                                <Link className="btn btn-info" to={`/editarproducto/${id}`}>
+                                <Link className="btn btn-info me-2" to={`/editarproducto/${id}`}>
                                     Editar
                                 </Link>
+                                <button className="btn btn-danger">Eliminar</button>
                             </td>
                         </tr>
                     ))}
