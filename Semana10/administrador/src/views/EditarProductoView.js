@@ -16,7 +16,7 @@ export default function EditarProductoView() {
     const getProducto = async () => {
         try {
             const prodObtenido = await obtenerProductoPorId(id); //2. obtenemos el producto por su ID
-            console.log(prodObtenido);
+            setValue(prodObtenido); //2.1 la rpta de mockapi la pongo en el estado
         } catch (error) {
             console.log(error);
         }
@@ -26,5 +26,9 @@ export default function EditarProductoView() {
         getProducto(); //3. con un useEffect llamamos a la función que me trae 01 producto por su ID
     }, []);
 
-    return <div></div>;
+    return (
+        <div>
+            <FormProducto value={value} />
+        </div>
+    );
 }
