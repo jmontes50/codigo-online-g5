@@ -8,6 +8,8 @@ import Header from "./components/Header";
 import NavSide from "./components/NavSide";
 import Main from "./components/Main";
 
+import { listaPlatillos } from "./utils/data";
+
 export default function App() {
     return (
         <div className="contenedor">
@@ -15,7 +17,8 @@ export default function App() {
                 <Header />
                 <div className="principal">
                     <NavSide />
-                    <Main />
+                    {/* <Componente nombre_props={valor_props} */}
+                    <Main lista={listaPlatillos} />
                 </div>
             </div>
             <div className="boleta"></div>

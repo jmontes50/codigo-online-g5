@@ -1,6 +1,9 @@
 import Producto from "./Producto";
 
-export default function Main() {
+//<Main lista={listaPlatillos} />
+//llamo a la f Main
+//Main({lista})
+export default function Main({ lista }) {
     return (
         <main>
             <Producto />
