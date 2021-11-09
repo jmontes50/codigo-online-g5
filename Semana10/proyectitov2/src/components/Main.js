@@ -6,7 +6,9 @@ import Producto from "./Producto";
 export default function Main({ lista }) {
     return (
         <main>
-            <Producto />
+            {lista.map((item, i) => (
+                <Producto key={i} />
+            ))}
         </main>
     );
 }
