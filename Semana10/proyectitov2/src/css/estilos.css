@@ -56,6 +56,8 @@ main {
 .producto {
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
 }
 
 .img-top {
@@ -65,8 +67,24 @@ main {
 
 .text-bottom {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
 }
 
 .text-bottom > * {
     margin: 5px 0;
+}
+
+.prod-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prod-info button {
+    background-color: steelblue;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
 }
