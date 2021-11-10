@@ -29,6 +29,8 @@ ul {
     top: 0;
     overflow: scroll;
     background-color: #35373e;
+    padding: 20px;
+    color: white;
 }
 
 .principal {

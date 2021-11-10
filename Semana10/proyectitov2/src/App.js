@@ -30,7 +30,28 @@ export default function App() {
                     <Main lista={listaPlatillos} anadirACarrito={anadirACarrito} />
                 </div>
             </div>
-            <div className="boleta"></div>
+            <div className="boleta">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Plato</th>
+                            <th>P.Unit.</th>
+                            <th>Cant.</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {carrito.map((plato, i) => (
+                            <tr>
+                                <td>{plato.nombre}</td>
+                                <td>S/ {plato.precio}</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 }
