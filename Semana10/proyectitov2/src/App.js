@@ -3,6 +3,8 @@
 //afectan a toda la aplicacion
 import "./css/estilos.css";
 
+import { useState } from "react";
+
 //import NombreFunción from "ruta/Nombre_Archivo"
 import Header from "./components/Header";
 import NavSide from "./components/NavSide";
@@ -11,6 +13,12 @@ import Main from "./components/Main";
 import { listaPlatillos } from "./utils/data";
 
 export default function App() {
+    const [carrito, setCarrito] = useState([]);
+
+    const anadirACarrito = (objPlatillo) => {
+        setCarrito([...carrito, objPlatillo]);
+    };
+
     return (
         <div className="contenedor">
             <div className="aplicacion">
