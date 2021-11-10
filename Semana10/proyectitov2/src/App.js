@@ -13,6 +13,7 @@ import Main from "./components/Main";
 import { listaPlatillos } from "./utils/data";
 
 export default function App() {
+    //cuando utilizemos hooks tienen que estar dentro del componente
     const [carrito, setCarrito] = useState([]);
 
     const anadirACarrito = (objPlatillo) => {
@@ -26,7 +27,7 @@ export default function App() {
                 <div className="principal">
                     <NavSide />
                     {/* <Componente nombre_props={valor_props} */}
-                    <Main lista={listaPlatillos} />
+                    <Main lista={listaPlatillos} anadirACarrito={anadirACarrito} />
                 </div>
             </div>
             <div className="boleta"></div>
