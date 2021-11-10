@@ -17,7 +17,19 @@ export default function App() {
     const [carrito, setCarrito] = useState([]);
 
     const anadirACarrito = (objPlatillo) => {
-        setCarrito([...carrito, objPlatillo]);
+        //primero preguntamos si ya existe
+        //findIndex() -1 no existe , 0 a + Si existe
+        const existe = carrito.findIndex((plato) => plato.id === objPlatillo.id);
+        if (existe === -1) {
+            //no existe, lo añado con la cantidad base de 1
+            setCarrito([...carrito, { ...objPlatillo, cantidad: 1 }]);
+        } else {
+            //si existe, hay que modificar el carrito
+            let carritoTmp = [...carrito]; //copia de carrito
+            carritoTmp[existe].cantidad += 1; //ya estoy aumentando su cantidad
+            setCarrito(carritoTmp);
+        }
+        // setCarrito([...carrito, objPlatillo]);
     };
 
     return (
@@ -42,7 +54,7 @@ export default function App() {
                     </thead>
                     <tbody>
                         {carrito.map((plato, i) => (
-                            <tr>
+                            <tr key={i}>
                                 <td>{plato.nombre}</td>
                                 <td>S/ {plato.precio}</td>
                                 <td></td>
