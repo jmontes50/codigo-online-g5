@@ -6,8 +6,10 @@ import Producto from "./Producto";
 export default function Main({ lista }) {
     return (
         <main>
+            {/* item es c/platillo que esta
+			dentro de lista */}
             {lista.map((item, i) => (
-                <Producto key={i} />
+                <Producto key={i} item={item} />
             ))}
         </main>
     );
