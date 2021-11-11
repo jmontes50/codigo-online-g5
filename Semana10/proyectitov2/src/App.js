@@ -57,10 +57,18 @@ export default function App() {
                             <tr key={i}>
                                 <td>{plato.nombre}</td>
                                 <td>S/ {plato.precio}</td>
-                                <td></td>
-                                <td></td>
+                                <td>{plato.cantidad}</td>
+                                <td>S/ {plato.cantidad * plato.precio}</td>
                             </tr>
                         ))}
+                        <tr>
+                            <td colSpan="3">TOTAL</td>
+                            <td>
+                                {carrito.reduce((total, plato) => {
+                                    return total + plato.precio * plato.cantidad;
+                                }, 0)}
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
