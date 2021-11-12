@@ -5,6 +5,8 @@ import { obtenerProductoPorId, editarProductoPorId } from "../services/productos
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
+let imagen;
+
 export default function EditarProductoView() {
     const [value, setValue] = useState({
         nombre: "",
@@ -44,6 +46,13 @@ export default function EditarProductoView() {
             [e.target.name]: e.target.value,
         });
     };
+
+    const manejarImagen = (e) => {
+        e.preventDefault();
+        console.log(e.target.files);
+        imagen = e.target.files[0]; //como para utilizar
+    };
+
     useEffect(() => {
         getProducto(); //3. con un useEffect llamamos a la función que me trae 01 producto por su ID
     }, []);
