@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import FormProducto from "../components/FormProducto";
-import { obtenerProductoPorId, editarProductoPorId } from "../services/productosService";
+import { obtenerProductoPorId, editarProductoPorId, subirImagen } from "../services/productosService";
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2";
 
-let imagen;
+let imagen; //undefined
 
 export default function EditarProductoView() {
     const [value, setValue] = useState({
@@ -28,7 +28,15 @@ export default function EditarProductoView() {
     const manejarSubmit = async (e) => {
         e.preventDefault();
         try {
-            await editarProductoPorId(id, value);
+            if (typeof imagen !== undefined) {
+                //si imagen es diferente de undefined
+                //porque imagen no seria undefined
+                const urlImagenSubida = await subirImagen(imagen); //subo la imagen
+                await editarProductoPorId(id, { ...value, imagen: urlImagenSubida }); //actualizo el objeto value
+            } else {
+                //actualizo pero sin subir ninguna imagen
+                await editarProductoPorId(id, value);
+            }
             await Swal.fire({
                 icon: "success",
                 title: "Éxito",
@@ -59,7 +67,12 @@ export default function EditarProductoView() {
 
     return (
         <div>
-            <FormProducto value={value} actualizarInput={actualizarInput} manejarSubmit={manejarSubmit} />
+            <FormProducto
+                value={value}
+                actualizarInput={actualizarInput}
+                manejarSubmit={manejarSubmit}
+                manejarImagen={manejarImagen}
+            />
         </div>
     );
 }

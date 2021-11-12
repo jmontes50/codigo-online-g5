@@ -61,6 +61,7 @@ const eliminarProducto = async (id) => {
 };
 
 const subirImagen = (imagen) => {
+    console.log(imagen);
     return new Promise((resolve, reject) => {
         //1, necesita la referencia para indicar donde vamos a guardar el archivo
         let refStorage = storage.ref(`fotos/${imagen.name}`);
