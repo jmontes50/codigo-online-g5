@@ -28,7 +28,7 @@ export default function EditarProductoView() {
     const manejarSubmit = async (e) => {
         e.preventDefault();
         try {
-            if (typeof imagen !== undefined) {
+            if (typeof imagen !== "undefined") {
                 //si imagen es diferente de undefined
                 //porque imagen no seria undefined
                 const urlImagenSubida = await subirImagen(imagen); //subo la imagen
