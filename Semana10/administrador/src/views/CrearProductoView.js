@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { crearProducto, subirImagen } from "../services/productosService";
 import FormProducto from "../components/FormProducto";
+import Cargando from "../components/Cargando";
 import Swal from "sweetalert2";
 
 let imagen; //básicamente es una variable global que no esta definida
@@ -12,6 +13,7 @@ export default function CrearProductoView() {
         descripcion: "",
         precio: 0,
     });
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
@@ -27,11 +29,14 @@ export default function CrearProductoView() {
         e.preventDefault();
         //Siempre intenten indicar al usuario que esta pasando o que a ocurrido
         try {
+            //cuando comience el proceso de crear el producto
+            setLoading(true);
             //subimos la primera imagen primero, obtengo la url de la imagen
             const urlImagenSubida = await subirImagen(imagen);
             //y se la agrego como una propiedad adicional de value
             await crearProducto({ ...value, imagen: urlImagenSubida });
             //después de que haya terminado de crear el producto
+            setLoading(false);
             await Swal.fire({
                 icon: "success",
                 title: "Éxito",
@@ -53,13 +58,17 @@ export default function CrearProductoView() {
     };
 
     return (
-        <div>
-            <FormProducto
-                value={value}
-                actualizarInput={actualizarInput}
-                manejarSubmit={manejarSubmit}
-                manejarImagen={manejarImagen}
-            />
-        </div>
+        <>
+            {loading === true ? (
+                <Cargando />
+            ) : (
+                <FormProducto
+                    value={value}
+                    actualizarInput={actualizarInput}
+                    manejarSubmit={manejarSubmit}
+                    manejarImagen={manejarImagen}
+                />
+            )}
+        </>
     );
 }
