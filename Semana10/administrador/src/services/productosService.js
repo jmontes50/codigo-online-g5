@@ -1,5 +1,5 @@
 import axios from "axios"; //fetch pero mejor
-
+import { storage } from "../config/Firebase";
 //conjunto de funciones para hacer peticiones
 
 //https://616b5ead16c3fa001717167c.mockapi.io/productos
@@ -60,4 +60,26 @@ const eliminarProducto = async (id) => {
     }
 };
 
-export { obtenerProductos, crearProducto, obtenerProductoPorId, editarProductoPorId, eliminarProducto };
+const subirImagen = (imagen) => {
+    return new Promise((resolve, reject) => {
+        //1, necesita la referencia para indicar donde vamos a guardar el archivo
+        let refStorage = storage.ref(`fotos/${imagen.name}`);
+        let tareaSubir = refStorage.put(imagen);
+
+        tareaSubir.on(
+            "state_changed",
+            () => {}, //ver el progreso
+            (error) => {
+                reject(error);
+            }, //ver si hay error
+            () => {
+                //tareaSubir finalizada
+                tareaSubir.snapshot.ref.getDownloadURL().then((urlImagen) => {
+                    resolve(urlImagen);
+                });
+            }
+        );
+    });
+};
+
+export { obtenerProductos, crearProducto, obtenerProductoPorId, editarProductoPorId, eliminarProducto, subirImagen };
