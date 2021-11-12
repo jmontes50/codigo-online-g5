@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { crearProducto } from "../services/productosService";
+import { crearProducto, subirImagen } from "../services/productosService";
 import FormProducto from "../components/FormProducto";
 import Swal from "sweetalert2";
 
@@ -27,7 +27,10 @@ export default function CrearProductoView() {
         e.preventDefault();
         //Siempre intenten indicar al usuario que esta pasando o que a ocurrido
         try {
-            await crearProducto(value);
+            //subimos la primera imagen primero, obtengo la url de la imagen
+            const urlImagenSubida = await subirImagen(imagen);
+            //y se la agrego como una propiedad adicional de value
+            await crearProducto({ ...value, imagen: urlImagenSubida });
             //después de que haya terminado de crear el producto
             await Swal.fire({
                 icon: "success",
