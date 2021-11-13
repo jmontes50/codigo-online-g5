@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { AuthContextProvider } from "./context/authContext";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
 import HomeView from "./views/HomeView";
 import LoginView from "./views/LoginView";
 import CheckOutView from "./views/CheckOutView";
@@ -16,7 +17,14 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<HomeView />} />
                     <Route path="/login" element={<LoginView />} />
-                    <Route path="/checkout" element={<CheckOutView />} />
+                    <Route
+                        path="/checkout"
+                        element={
+                            <PrivateRoute>
+                                <CheckOutView />
+                            </PrivateRoute>
+                        }
+                    />
                 </Routes>
             </Router>
         </AuthContextProvider>
