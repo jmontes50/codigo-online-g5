@@ -1,6 +1,8 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { subirImagen } from "../services/productosService";
 import { crearCategoria } from "../services/categoriasService";
+import { useNavigate } from "react-router"; //navegar a otra ruta
+import Swal from "sweetalert2"; //alertas bonitas
 
 let imagen;
 
@@ -8,6 +10,8 @@ export default function CrearCategoriaView() {
     //estas referencias van a funcionar como ID`s
     const refNombre = useRef();
     const refDescripcion = useRef();
+
+    const navigate = useNavigate();
 
     const manejarSubmit = async (e) => {
         e.preventDefault();
@@ -20,7 +24,11 @@ export default function CrearCategoriaView() {
         try {
             const urlImagenSubida = await subirImagen(imagen);
             const categoriaCreada = await crearCategoria({ ...nuevaCategoria, imagen: urlImagenSubida });
-            console.log(categoriaCreada);
+            await Swal.fire({
+                icon: "success",
+                title: "Categoría Creada!",
+            });
+            navigate("/listacategorias");
         } catch (error) {
             console.log(error);
         }
