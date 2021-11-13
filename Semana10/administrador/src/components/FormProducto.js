@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-export default function FormProducto({ value, actualizarInput, manejarSubmit, manejarImagen }) {
+export default function FormProducto({ value, actualizarInput, manejarSubmit, manejarImagen, categorias }) {
     const inputFile = useRef(); //es una referencia de react hacia un elemento como si fuera un ID
 
     return (
@@ -59,6 +59,24 @@ export default function FormProducto({ value, actualizarInput, manejarSubmit, ma
                             manejarImagen(e);
                         }}
                     />
+                </div>
+
+                <div className="mb-3">
+                    <label className="form-label">Categoría</label>
+                    <select
+                        value={value.categoria_id}
+                        className="form-select"
+                        name="categoria_id"
+                        onChange={(e) => {
+                            actualizarInput(e);
+                        }}
+                    >
+                        {categorias.map((cat, i) => (
+                            <option value={cat.id} key={i}>
+                                {cat.nombre}
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 <button className="btn btn-primary" type="submit">

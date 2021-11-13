@@ -13,6 +13,7 @@ export default function CrearProductoView() {
         nombre: "",
         descripcion: "",
         precio: 0,
+        categoria_id: "1",
     });
     const [categorias, setCategorias] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -81,6 +82,7 @@ export default function CrearProductoView() {
                     actualizarInput={actualizarInput}
                     manejarSubmit={manejarSubmit}
                     manejarImagen={manejarImagen}
+                    categorias={categorias}
                 />
             )}
         </>
