@@ -9,11 +9,18 @@ export default function CrearCategoriaView() {
     const manejarSubmit = async (e) => {
         e.preventDefault();
         let nuevaCategoria = {
-            //el objeto que necesito mandar a mockapi tiene que tener estas propiedas
+            //el objeto que necesito mandar a mockapi tiene que tener estas propiedades
+            //mediante esas referencias yo pueda obtener el valor actual
             nombre: refNombre.current.value,
             descripcion: refDescripcion.current.value,
         };
         console.log(nuevaCategoria);
+    };
+
+    const manejarImagen = (e) => {
+        e.preventDefault();
+        console.log(e.target.files); //un FileList, es un arreglo de archivos
+        imagen = e.target.files[0]; //listo para utilizar
     };
 
     return (
@@ -25,13 +32,25 @@ export default function CrearCategoriaView() {
                 }}
             >
                 <div className="mb-3">
-                    <label className="form-label">Nombre categoria</label>
+                    <label className="form-label">Nombre categoría</label>
                     <input type="text" className="form-control" ref={refNombre} />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">Descripción categoria</label>
+                    <label className="form-label">Descripción categoría</label>
                     <input type="text" className="form-control" ref={refDescripcion} />
                 </div>
+
+                <div className="mb-3">
+                    <label className="form-label">Imagen categoría</label>
+                    <input
+                        type="file"
+                        className="form-control"
+                        onChange={(e) => {
+                            manejarImagen(e);
+                        }}
+                    />
+                </div>
+
                 <button className="btn btn-primary" type="submit">
                     Guardar
                 </button>
