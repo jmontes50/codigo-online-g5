@@ -6,10 +6,24 @@ export default function CrearCategoriaView() {
     const refNombre = useRef();
     const refDescripcion = useRef();
 
+    const manejarSubmit = async (e) => {
+        e.preventDefault();
+        let nuevaCategoria = {
+            //el objeto que necesito mandar a mockapi tiene que tener estas propiedas
+            nombre: refNombre.current.value,
+            descripcion: refDescripcion.current.value,
+        };
+        console.log(nuevaCategoria);
+    };
+
     return (
         <div>
             <h1 className="mb-3">Crear nueva categoría</h1>
-            <form>
+            <form
+                onSubmit={(e) => {
+                    manejarSubmit(e);
+                }}
+            >
                 <div className="mb-3">
                     <label className="form-label">Nombre categoria</label>
                     <input type="text" className="form-control" ref={refNombre} />
