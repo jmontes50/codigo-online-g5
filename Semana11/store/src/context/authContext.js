@@ -15,4 +15,14 @@ export const AuthContextProvider = (props) => {
         const rptaGoogle = await auth.signInWithPopup(proveedorGoogle);
         console.log(rptaGoogle);
     };
+
+    return (
+        <AuthContext.Provider
+            // value es lo que va a brindar desde su estado global
+            value={{ user, signIn }}
+        >
+            {/* Provider va a funcionar como una caja generica transparente, componente genérico que va a contener otros componentes pero sin saber exactamente que componentes son */}
+            {props.children}
+        </AuthContext.Provider>
+    );
 };
