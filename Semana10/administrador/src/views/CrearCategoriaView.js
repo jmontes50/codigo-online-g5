@@ -1,4 +1,7 @@
 import { useState, useRef } from "react";
+import { subirImagen } from "../services/productosService";
+import { crearCategoria } from "../services/categoriasService";
+
 let imagen;
 
 export default function CrearCategoriaView() {
@@ -14,7 +17,13 @@ export default function CrearCategoriaView() {
             nombre: refNombre.current.value,
             descripcion: refDescripcion.current.value,
         };
-        console.log(nuevaCategoria);
+        try {
+            const urlImagenSubida = await subirImagen(imagen);
+            const categoriaCreada = await crearCategoria({ ...nuevaCategoria, imagen: urlImagenSubida });
+            console.log(categoriaCreada);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const manejarImagen = (e) => {
