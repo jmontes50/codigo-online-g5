@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { crearProducto, subirImagen } from "../services/productosService";
+import { obtenerCategorias } from "../services/categoriasService";
 import FormProducto from "../components/FormProducto";
 import Cargando from "../components/Cargando";
 import Swal from "sweetalert2";
@@ -13,6 +14,7 @@ export default function CrearProductoView() {
         descripcion: "",
         precio: 0,
     });
+    const [categorias, setCategorias] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
@@ -56,6 +58,18 @@ export default function CrearProductoView() {
         console.log(e.target.files);
         imagen = e.target.files[0]; //como para utilizar
     };
+
+    useEffect(() => {
+        const getCategorias = async () => {
+            try {
+                const catObtenidas = await obtenerCategorias();
+                setCategorias(catObtenidas);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        getCategorias();
+    }, []);
 
     return (
         <>
