@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { obtenerCategorias } from "../services/categoriasService";
 import Cargando from "../components/Cargando";
+import { Link } from "react-router-dom";
 
 export default function ListaCategoriasView() {
     const [categorias, setCategorias] = useState([]);
@@ -28,6 +29,9 @@ export default function ListaCategoriasView() {
             ) : (
                 <>
                     <h1 className="mb-3">Lista Categorias</h1>
+                    <Link to="/crearcategoria" className="btn btn-primary mb-2">
+                        Crear Categoría
+                    </Link>
                     <table className="table">
                         <thead>
                             <tr>
