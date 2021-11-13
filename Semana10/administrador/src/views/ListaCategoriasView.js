@@ -21,5 +21,31 @@ export default function ListaCategoriasView() {
         getCategorias();
     }, []);
 
-    return <div></div>;
+    return (
+        <>
+            {loading ? (
+                <Cargando />
+            ) : (
+                <>
+                    <h1 className="mb-3">Lista Categorias</h1>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Nombre Categoria</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {categorias.map((cat, i) => (
+                                <tr key={i}>
+                                    <td>{cat.nombre}</td>
+                                    <td>{cat.descripcion}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </>
+            )}
+        </>
+    );
 }
