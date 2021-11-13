@@ -13,5 +13,6 @@ export const AuthContextProvider = (props) => {
     const signIn = async () => {
         //para loguearte abre una ventanita. signInWithPopup(proveedor)
         const rptaGoogle = await auth.signInWithPopup(proveedorGoogle);
+        console.log(rptaGoogle);
     };
 };
