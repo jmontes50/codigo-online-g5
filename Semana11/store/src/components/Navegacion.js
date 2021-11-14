@@ -4,6 +4,8 @@ import { Navbar, Container, Nav, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function Navegacion() {
+    const { signOut } = useContext(AuthContext);
+
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -16,7 +18,7 @@ export default function Navegacion() {
                         </Link>
                     </Nav>
                     <Nav>
-                        <NavLink>Salir</NavLink>
+                        <NavLink onClick={signOut}>Salir</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
