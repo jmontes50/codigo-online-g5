@@ -18,18 +18,6 @@ const GrupoProdHome = () => {
         getProductos();
     }, []);
 
-    // return (
-    //     <div className="container">
-    //         <div className="row my-3">
-    //             <div className="col-12 col-md-6 col-lg-4">
-    //                 {productos.map((prod, i) => (
-    //                     <ProductoCard key={i} producto={prod} />
-    //                 ))}
-    //             </div>
-    //         </div>
-    //     </div>
-    // );
-
     return (
         <div className="container">
             <div className="row my-3">
