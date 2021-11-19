@@ -1,7 +1,23 @@
+import { useState, useEffect } from "react";
+import { obtenerProductosPorPagina } from "../services/productoService";
 import ProductoCard from "./ProductoCard";
 
 //productos va a ser un arreglo
 const GrupoProdHome = (productos) => {
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        const getProductos = async () => {
+            try {
+                const prodObtenidos = await obtenerProductosPorPagina();
+                setProductos(prodObtenidos);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        getProductos();
+    }, []);
+
     return (
         <div className="container">
             <div className="row my-3">
