@@ -1,3 +1,9 @@
+import GrupoProdHome from "../components/GrupoProdHome";
+
 export default function HomeView() {
-    return <div>Soy el Home y soy Público</div>;
+    return (
+        <div>
+            <GrupoProdHome />
+        </div>
+    );
 }

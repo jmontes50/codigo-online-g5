@@ -3,7 +3,7 @@ import { obtenerProductosPorPagina } from "../services/productoService";
 import ProductoCard from "./ProductoCard";
 
 //productos va a ser un arreglo
-const GrupoProdHome = (productos) => {
+const GrupoProdHome = () => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const GrupoProdHome = (productos) => {
     return (
         <div className="container">
             <div className="row my-3">
-                <div className="col-12 col-md-6 col-sm-4">
+                <div className="col-12 col-md-6 col-lg-4">
                     {productos.map((prod, i) => (
                         <ProductoCard key={i} producto={prod} />
                     ))}
