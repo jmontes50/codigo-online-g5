@@ -36,15 +36,13 @@ export default function ProductoDetalleView() {
                             <hr />
                             <p>{producto.descripcion}</p>
                             <div className="d-flex">
-                                <div>
-                                    <button className="btn btn-dark">
-                                        <i className="fas fa-minus"></i>
-                                    </button>
-                                    1
-                                    <button className="btn btn-dark">
-                                        <i class="fas fa-plus"></i>
-                                    </button>
-                                </div>
+                                <button className="btn btn-dark">
+                                    <i className="fas fa-minus"></i>
+                                </button>
+                                <h4 className="mx-2">1</h4>
+                                <button className="btn btn-dark">
+                                    <i class="fas fa-plus"></i>
+                                </button>
                             </div>
                         </div>
                     </>
