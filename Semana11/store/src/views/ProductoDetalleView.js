@@ -4,6 +4,7 @@ import { obtenerProductoPorId } from "../services/productoService";
 
 export default function ProductoDetalleView() {
     const [producto, setProducto] = useState(null);
+    const [cantidad, setCantidad] = useState(1);
 
     const { id } = useParams(); //un objeto con todos los parámetros de la URL
 
@@ -14,6 +15,13 @@ export default function ProductoDetalleView() {
         } catch (error) {
             console.log(error);
         }
+    };
+
+    const modificarCantidad = (numero) => {
+        if (cantidad + numero === 0) {
+            return; //corta la ejecución
+        }
+        setCantidad(cantidad + numero);
     };
 
     useEffect(() => {
@@ -36,11 +44,21 @@ export default function ProductoDetalleView() {
                             <hr />
                             <p>{producto.descripcion}</p>
                             <div className="d-flex">
-                                <button className="btn btn-dark">
+                                <button
+                                    className="btn btn-dark"
+                                    onClick={() => {
+                                        modificarCantidad(-1);
+                                    }}
+                                >
                                     <i className="fas fa-minus"></i>
                                 </button>
-                                <h4 className="mx-2">1</h4>
-                                <button className="btn btn-dark">
+                                <h4 className="mx-2">{cantidad}</h4>
+                                <button
+                                    className="btn btn-dark"
+                                    onClick={() => {
+                                        modificarCantidad(1);
+                                    }}
+                                >
                                     <i class="fas fa-plus"></i>
                                 </button>
                             </div>
