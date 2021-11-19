@@ -62,7 +62,7 @@ export default function ProductoDetalleView() {
                                     <i className="fas fa-plus"></i>
                                 </button>
                                 <button className="btn btn-outline-dark ms-3">
-                                    <i class="fas fa-cart-plus"></i> Añadir a carrito
+                                    <i className="fas fa-cart-plus"></i> Añadir a carrito
                                 </button>
                             </div>
                             <button className="btn btn-outline-dark btn-lg mt-2">Comprar ahora!</button>
