@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { obtenerProductoPorId } from "../services/productoService";
+import ReactImageMagnify from "react-image-magnify";
 
 export default function ProductoDetalleView() {
     const [producto, setProducto] = useState(null);
@@ -36,7 +37,22 @@ export default function ProductoDetalleView() {
                 {producto ? (
                     <>
                         <div className="col-12 col-md-6">
-                            <img src={producto.imagen} alt={producto.nombre} className="img-fluid" />
+                            {/* cambiar imagen */}
+                            {/* <img src={producto.imagen} alt={producto.nombre} className="img-fluid" /> */}
+                            <ReactImageMagnify
+                                {...{
+                                    smallImage: {
+                                        alt: producto.nombre,
+                                        isFluidWidth: true,
+                                        src: producto.imagen,
+                                    },
+                                    largeImage: {
+                                        src: producto.imagen,
+                                        width: 1600,
+                                        height: 1200,
+                                    },
+                                }}
+                            />
                         </div>
                         <div className="col-12 col-md-6">
                             <h4>{producto.nombre}</h4>
