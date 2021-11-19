@@ -18,7 +18,7 @@ export default function ProductoDetalleView() {
     };
 
     const modificarCantidad = (numero) => {
-        if (cantidad + numero === 0) {
+        if (cantidad + numero === 0 || cantidad + numero === 11) {
             return; //corta la ejecución
         }
         setCantidad(cantidad + numero);
@@ -59,9 +59,13 @@ export default function ProductoDetalleView() {
                                         modificarCantidad(1);
                                     }}
                                 >
-                                    <i class="fas fa-plus"></i>
+                                    <i className="fas fa-plus"></i>
+                                </button>
+                                <button className="btn btn-outline-dark ms-3">
+                                    <i class="fas fa-cart-plus"></i> Añadir a carrito
                                 </button>
                             </div>
+                            <button className="btn btn-outline-dark btn-lg mt-2">Comprar ahora!</button>
                         </div>
                     </>
                 ) : null}
