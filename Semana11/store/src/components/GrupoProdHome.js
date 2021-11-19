@@ -5,18 +5,21 @@ import ProductoCard from "./ProductoCard";
 //productos va a ser un arreglo
 const GrupoProdHome = () => {
     const [productos, setProductos] = useState([]);
+    const [pagina, setPagina] = useState(1);
+    const [limite, setLimite] = useState(6);
 
+    const getProductos = async () => {
+        try {
+            const prodObtenidos = await obtenerProductosPorPagina(pagina, limite);
+            // setProductos(prodObtenidos);
+            setProductos([...productos, ...prodObtenidos]);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     useEffect(() => {
-        const getProductos = async () => {
-            try {
-                const prodObtenidos = await obtenerProductosPorPagina();
-                setProductos(prodObtenidos);
-            } catch (error) {
-                console.log(error);
-            }
-        };
         getProductos();
-    }, []);
+    }, [pagina]);
 
     return (
         <div className="container">
@@ -26,6 +29,16 @@ const GrupoProdHome = () => {
                         <ProductoCard key={i} producto={prod} />
                     </div>
                 ))}
+            </div>
+            <div className="d-flex justify-content-center">
+                <button
+                    className="btn btn-primary"
+                    onClick={() => {
+                        setPagina(pagina + 1);
+                    }}
+                >
+                    Ver más...
+                </button>
             </div>
         </div>
     );
