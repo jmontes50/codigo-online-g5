@@ -4,6 +4,7 @@ import { obtenerCategorias } from "../services/categoriaService";
 import ProductoCard from "../components/ProductoCard";
 
 export default function ProductoConFiltrosView() {
+    const [productosOriginal, setProductosOriginal] = useState([]); //nunca lo modifico
     const [productos, setProductos] = useState([]);
     const [categorias, setCategorias] = useState([]);
     const [pagina, setPagina] = useState(1);
@@ -14,6 +15,7 @@ export default function ProductoConFiltrosView() {
             const prodObtenidos = await obtenerProductosPorPagina(pagina, limite);
             const catObtenidas = await obtenerCategorias();
             setProductos(prodObtenidos);
+            setProductosOriginal(prodObtenidos);
             setCategorias(catObtenidas);
         } catch (error) {
             console.log(error); //Swal icon:"error"
@@ -21,18 +23,27 @@ export default function ProductoConFiltrosView() {
     };
 
     const filtrarPorCategoria = (idCategoria) => {
-        const productosFiltrados = productos.filter((prod) => prod.categoria_id === idCategoria);
+        console.log({ idCategoria });
+        const productosFiltrados = productosOriginal.filter((prod) => prod.categoria_id === idCategoria);
         setProductos(productosFiltrados);
     };
 
     useEffect(() => {
         getData();
     }, []);
+
     return (
         <>
             <div className="container">
                 <div className="d-flex justify-content-around my-3 px-5">
-                    <button className="btn btn-outline-dark btn-sm">Todas las categorías</button>
+                    <button
+                        className="btn btn-outline-dark btn-sm"
+                        onClick={() => {
+                            setProductos(productosOriginal);
+                        }}
+                    >
+                        Todas las categorías
+                    </button>
                     {categorias.map((cat, i) => (
                         <button
                             className="btn btn-outline-dark btn-sm"
