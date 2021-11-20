@@ -30,9 +30,11 @@ export default function ProductoDetalleView() {
 
     const anadirACarritoContext = () => {
         const { id, nombre, precio } = producto;
-        /**const nuevoProducto = {
-            id:id
-		} */
+        /**   {   id: producto.id,
+			 nombre: producto.nombre,
+			precio: producto.precio,
+			cantidad: cantidad,
+			}; */
         const nuevoProducto = {
             id,
             nombre,
