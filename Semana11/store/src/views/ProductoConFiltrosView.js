@@ -20,6 +20,11 @@ export default function ProductoConFiltrosView() {
         }
     };
 
+    const filtrarPorCategoria = (idCategoria) => {
+        const productosFiltrados = productos.filter((prod) => prod.categoria_id === idCategoria);
+        setProductos(productosFiltrados);
+    };
+
     useEffect(() => {
         getData();
     }, []);
@@ -29,7 +34,13 @@ export default function ProductoConFiltrosView() {
                 <div className="d-flex justify-content-around my-3 px-5">
                     <button className="btn btn-outline-dark btn-sm">Todas las categorías</button>
                     {categorias.map((cat, i) => (
-                        <button className="btn btn-outline-dark btn-sm" key={i}>
+                        <button
+                            className="btn btn-outline-dark btn-sm"
+                            key={i}
+                            onClick={() => {
+                                filtrarPorCategoria(cat.id);
+                            }}
+                        >
                             {cat.nombre}
                         </button>
                     ))}
