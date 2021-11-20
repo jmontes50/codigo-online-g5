@@ -22,7 +22,7 @@ export default function ProductoConFiltrosView() {
     return (
         <>
             <div className="container">
-                <div class="row my-3">
+                <div className="row my-3">
                     {productos.map((prod, i) => (
                         <div className="col-12 col-md-6 col-lg-4" key={i}>
                             <ProductoCard producto={prod} />
