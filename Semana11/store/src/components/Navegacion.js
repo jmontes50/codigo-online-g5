@@ -24,6 +24,9 @@ export default function Navegacion() {
                         <Link className="nav-link" to="/">
                             Home
                         </Link>
+                        <Link className="nav-link" to="/productosfiltros">
+                            Productos
+                        </Link>
                         {user ? (
                             <>
                                 <Link className="nav-link" to="/checkout">

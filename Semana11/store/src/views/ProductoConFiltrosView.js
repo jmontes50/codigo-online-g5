@@ -9,7 +9,7 @@ export default function ProductoConFiltrosView() {
 
     const getData = async () => {
         try {
-            const prodObtenidos = await obtenerProductosPorPagina(página, limite);
+            const prodObtenidos = await obtenerProductosPorPagina(pagina, limite);
             setProductos(prodObtenidos);
         } catch (error) {
             console.log(error); //Swal icon:"error"
