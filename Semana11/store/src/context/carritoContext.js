@@ -25,6 +25,20 @@ const CarritoContextProvider = (props) => {
         }
     };
 
+    //1. Cuando cargue el Provider haremos que pregunte si hay algo en el localStorage
+    //1.1 si es que encuentra algo en el localStorage pues hacemos un setCarrito
+    useEffect(() => {
+        const carritoStorage = JSON.parse(localStorage.getItem("carritoApp"));
+        if (carritoStorage.length > 0) {
+            setCarrito(carritoStorage);
+        }
+    }, []);
+
+    //2. Pero cada vez que cambie carrito, guardaremos la información en el localStorage
+    useEffect(() => {
+        localStorage.setItem("carritoApp", JSON.stringify(carrito));
+    }, [carrito]);
+
     return <CarritoContext.Provider value={{ carrito, anadirACarrito }}>{props.children}</CarritoContext.Provider>;
 };
 
