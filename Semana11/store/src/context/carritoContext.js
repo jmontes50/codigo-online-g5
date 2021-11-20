@@ -27,3 +27,5 @@ const CarritoContextProvider = (props) => {
 
     return <CarritoContext.Provider value={{ carrito, anadirACarrito }}>{props.children}</CarritoContext.Provider>;
 };
+
+export default CarritoContextProvider;
