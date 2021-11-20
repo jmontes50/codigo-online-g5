@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Slider from "@mui/material/Slider";
 import { obtenerProductosPorPagina } from "../services/productoService";
 import { obtenerCategorias } from "../services/categoriaService";
 import ProductoCard from "../components/ProductoCard";
@@ -9,6 +10,7 @@ export default function ProductoConFiltrosView() {
     const [categorias, setCategorias] = useState([]);
     const [pagina, setPagina] = useState(1);
     const [limite, setLimite] = useState(20);
+    const [precio, setPrecio] = useState([0, 500]);
 
     const getData = async () => {
         try {
@@ -26,6 +28,10 @@ export default function ProductoConFiltrosView() {
         console.log({ idCategoria });
         const productosFiltrados = productosOriginal.filter((prod) => prod.categoria_id === idCategoria);
         setProductos(productosFiltrados);
+    };
+
+    const manejarFiltroPrecio = (evento, nuevoRango) => {
+        setPrecio(nuevoRango);
     };
 
     useEffect(() => {
@@ -55,6 +61,10 @@ export default function ProductoConFiltrosView() {
                             {cat.nombre}
                         </button>
                     ))}
+                </div>
+                <div>
+                    <small>Filtro por precio:</small>
+                    <Slider value={precio} onChange={manejarFiltroPrecio} valueLabelDisplay="auto" min={1} max={500} />
                 </div>
                 <div className="row my-3">
                     {productos.map((prod, i) => (
