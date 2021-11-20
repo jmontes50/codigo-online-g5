@@ -36,6 +36,12 @@ export default function Navegacion() {
                         ) : null}
                     </Nav>
                     <Nav>
+                        <div className="d-flex">
+                            <input type="text" placeholder="Buscar producto..." className="form-control" />
+                            <button className="btn btn-outline-dark">
+                                <i className="fas fa-search"></i>
+                            </button>
+                        </div>
                         <Link className="nav-link" to="/carrito">
                             <Badge badgeContent={totalCarrito} color="primary">
                                 <ShoppingCartIcon />
