@@ -9,6 +9,7 @@ import LoginView from "./views/LoginView";
 import CheckOutView from "./views/CheckOutView";
 import Navegacion from "./components/Navegacion";
 import ProductoDetalleView from "./views/ProductoDetalleView";
+import CarritoView from "./views/CarritoView";
 
 export default function App() {
     return (
@@ -21,6 +22,7 @@ export default function App() {
                         <Route path="/" element={<HomeView />} />
                         <Route path="/login" element={<LoginView />} />
                         <Route path="/detalleproducto/:id" element={<ProductoDetalleView />} />
+                        <Route path="/carrito" element={<CarritoView />} />
                         <Route
                             path="/checkout"
                             element={
