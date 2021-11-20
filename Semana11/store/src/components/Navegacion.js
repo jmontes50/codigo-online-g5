@@ -21,6 +21,9 @@ export default function Navegacion() {
                         </Link>
                     </Nav>
                     <Nav>
+                        <Link className="nav-link" to="/carrito">
+                            Carrito
+                        </Link>
                         <NavLink onClick={signOut}>Salir</NavLink>
                     </Nav>
                 </Navbar.Collapse>
