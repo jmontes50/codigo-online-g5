@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { AuthContext } from "../context/authContext";
 import { CarritoContext } from "../context/carritoContext";
 import { Navbar, Container, Nav, NavLink, NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
@@ -10,9 +10,17 @@ export default function Navegacion() {
     const { user, signOut } = useContext(AuthContext);
     const { carrito } = useContext(CarritoContext);
 
+    const refBuscar = useRef();
+
+    const navigate = useNavigate();
+
     const totalCarrito = carrito.reduce((total, prod) => {
         return total + prod.cantidad;
     }, 0);
+
+    const manejarBusqueda = () => {
+        navigate(`/productosfiltros/${refBuscar.current.value}`);
+    };
 
     return (
         <Navbar bg="light" expand="lg">
@@ -37,8 +45,13 @@ export default function Navegacion() {
                     </Nav>
                     <Nav>
                         <div className="d-flex">
-                            <input type="text" placeholder="Buscar producto..." className="form-control" />
-                            <button className="btn btn-outline-dark">
+                            <input
+                                type="text"
+                                placeholder="Buscar producto..."
+                                className="form-control"
+                                ref={refBuscar}
+                            />
+                            <button className="btn btn-outline-dark" onClick={manejarBusqueda}>
                                 <i className="fas fa-search"></i>
                             </button>
                         </div>

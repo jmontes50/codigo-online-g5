@@ -27,7 +27,10 @@ export default function App() {
                         <Route path="/login" element={<LoginView />} />
                         <Route path="/detalleproducto/:id" element={<ProductoDetalleView />} />
                         <Route path="/carrito" element={<CarritoView />} />
-                        <Route path="/productosfiltros" element={<ProductoConFiltrosView />} />
+                        <Route path="/productosfiltros">
+                            <Route path="/productosfiltros" element={<ProductoConFiltrosView />} />
+                            <Route path="/productosfiltros/:busqueda" element={<ProductoConFiltrosView />} />
+                        </Route>
                         {/* rutas privadas */}
                         <Route
                             path="/checkout"
