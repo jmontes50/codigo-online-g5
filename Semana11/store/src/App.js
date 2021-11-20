@@ -10,6 +10,7 @@ import CheckOutView from "./views/CheckOutView";
 import Navegacion from "./components/Navegacion";
 import ProductoDetalleView from "./views/ProductoDetalleView";
 import CarritoView from "./views/CarritoView";
+import NotFound from "./views/NotFound";
 
 export default function App() {
     return (
@@ -19,6 +20,8 @@ export default function App() {
                 <Router>
                     <Navegacion />
                     <Routes>
+                        {/* cuando quiero poner una página de 404, le indico el path="*" y al principio */}
+                        <Route path="*" element={<NotFound />} />
                         <Route path="/" element={<HomeView />} />
                         <Route path="/login" element={<LoginView />} />
                         <Route path="/detalleproducto/:id" element={<ProductoDetalleView />} />
