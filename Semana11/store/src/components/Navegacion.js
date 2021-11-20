@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { AuthContext } from "../context/authContext";
 import { Navbar, Container, Nav, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Badge from "@mui/material/Badge";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function Navegacion() {
     const { signOut } = useContext(AuthContext);
@@ -22,7 +24,9 @@ export default function Navegacion() {
                     </Nav>
                     <Nav>
                         <Link className="nav-link" to="/carrito">
-                            Carrito
+                            <Badge badgeContent={10} color="primary">
+                                <ShoppingCartIcon />
+                            </Badge>
                         </Link>
                         <NavLink onClick={signOut}>Salir</NavLink>
                     </Nav>
