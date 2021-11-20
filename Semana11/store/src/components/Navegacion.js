@@ -10,6 +10,10 @@ export default function Navegacion() {
     const { signOut } = useContext(AuthContext);
     const { carrito } = useContext(CarritoContext);
 
+    const totalCarrito = carrito.reduce((total, prod) => {
+        return total + prod.cantidad;
+    }, 0);
+
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -26,7 +30,7 @@ export default function Navegacion() {
                     </Nav>
                     <Nav>
                         <Link className="nav-link" to="/carrito">
-                            <Badge badgeContent={10} color="primary">
+                            <Badge badgeContent={totalCarrito} color="primary">
                                 <ShoppingCartIcon />
                             </Badge>
                         </Link>
