@@ -25,13 +25,19 @@ export default function ProductoConFiltrosView() {
     };
 
     const filtrarPorCategoria = (idCategoria) => {
-        console.log({ idCategoria });
         const productosFiltrados = productosOriginal.filter((prod) => prod.categoria_id === idCategoria);
         setProductos(productosFiltrados);
     };
 
     const manejarFiltroPrecio = (evento, nuevoRango) => {
         setPrecio(nuevoRango);
+        // filtro el arreglo por los que tengan precio
+        //mayor o igual que el menor valor del rango del SLider
+        //meno o igual que el mayor valor del rango del SLider
+        const productosPorPrecio = productosOriginal.filter((prod) => {
+            return prod.precio >= precio[0] && prod.precio <= precio[1];
+        });
+        setProductos(productosPorPrecio);
     };
 
     useEffect(() => {
