@@ -94,7 +94,7 @@ export default function ProductoDetalleView() {
                                 >
                                     <i className="fas fa-plus"></i>
                                 </button>
-                                <button className="btn btn-outline-dark ms-3">
+                                <button className="btn btn-outline-dark ms-3" onClick={anadirACarritoContext}>
                                     <i className="fas fa-cart-plus"></i> Añadir a carrito
                                 </button>
                             </div>
