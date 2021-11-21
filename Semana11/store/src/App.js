@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import { AuthContextProvider } from "./context/authContext";
 import CarritoContextProvider from "./context/carritoContext";
 
