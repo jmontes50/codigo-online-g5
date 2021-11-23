@@ -5,6 +5,12 @@ import { useForm } from "react-hook-form"; //useForm es un hook personalizado, p
 export default function CheckOutView() {
     const { carrito } = useContext(CarritoContext);
 
+    let total = 0;
+
+    total = carrito.reduce((acum, prod) => {
+        return acum + prod.cantidad * prod.precio;
+    }, 0);
+
     return (
         <div className="container mt-4">
             <h1>Checkout</h1>
@@ -24,6 +30,15 @@ export default function CheckOutView() {
                                 </div>
                             </li>
                         ))}
+                        {/* pondré total */}
+                        {total > 0 ? (
+                            <li className="list-group-item d-flex justify-content-between fw-bold">
+                                <span className="fw-bold">TOTAL:</span>
+                                <span>S/ {total.toFixed(2)}</span>
+                            </li>
+                        ) : (
+                            <li className="list-group-item">Todavía no ha agregado ningún producto.</li>
+                        )}
                     </ul>
                 </div>
             </div>
