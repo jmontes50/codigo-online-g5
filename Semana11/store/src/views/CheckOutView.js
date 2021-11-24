@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CarritoContext } from "../context/carritoContext";
 import { useForm } from "react-hook-form"; //useForm es un hook personalizado, para manejar formularios
-import { MapContainer, TileLayer, Marker, useMapEvents, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 
 export default function CheckOutView() {
     const [coordenadas, setCoordenadas] = useState([-12.0433, -77.028]);
