@@ -109,7 +109,7 @@ export default function CheckOutView() {
                             {errors.direccion && <small className="text-danger">Solo se acepta letras y dígitos</small>}
                         </div>
 
-                        <MapContainer center={coordenadas} zoom={15}>
+                        <MapContainer center={coordenadas} zoom={15} style={{ height: "400px" }}>
                             {/* Tile Layer es la fuente de datos para leaflet */}
                             <TileLayer
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
