@@ -82,8 +82,29 @@ export default function CheckOutView() {
                                     maxLength: { value: 14, message: "Máximo 14 dígitos" },
                                 })}
                             />
-                            {/* errors.prop existe && retorna esto */}
                             {errors.telefono && <small className="text-danger">{errors.telefono.message}</small>}
+                        </div>
+
+                        <div className="mb-2">
+                            <label className="form-label">Correo</label>
+                            <input
+                                type="email"
+                                placeholder="Ej. jperez@tecsup.edu.pe"
+                                className="form-control"
+                                {...register("email", { required: true })}
+                            />
+                            {errors.email && <small className="text-danger">Este correo es obligatorio</small>}
+                        </div>
+
+                        <div className="mb-2">
+                            <label className="form-label">Dirección</label>
+                            <input
+                                type="text"
+                                placeholder="Ej. Urb Los Arces F 67"
+                                className="form-control"
+                                {...register("direccion", { pattern: /^[A-Za-z0-9]$/ })}
+                            />
+                            {errors.direccion && <small className="text-danger">Solo se acepta letras y dígitos</small>}
                         </div>
 
                         <button type="submit" className="btn btn-dark btn-lg">
