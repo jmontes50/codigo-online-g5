@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { CarritoContext } from "../context/carritoContext";
 import { useForm } from "react-hook-form"; //useForm es un hook personalizado, para manejar formularios
-import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, useMapEvents, useMap } from "react-leaflet";
 
 export default function CheckOutView() {
     const [coordenadas, setCoordenadas] = useState([-12.0433, -77.028]);
@@ -25,6 +25,17 @@ export default function CheckOutView() {
 
     const recibirSubmit = (data) => {
         console.log("Rev. data:", data);
+    };
+
+    const AnadirMarcador = () => {
+        const map = useMapEvents({
+            click: (e) => {
+                // console.log("viendo useMapEvents", e);
+                const { lat, lng } = e.latlng;
+                setCoordenadas([lat, lng]);
+            },
+        });
+        return null;
     };
 
     return (
@@ -115,6 +126,8 @@ export default function CheckOutView() {
                                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             />
+                            <AnadirMarcador />
+                            <Marker position={coordenadas} />
                         </MapContainer>
 
                         <button type="submit" className="btn btn-dark btn-lg" disabled={carrito.length <= 0}>
