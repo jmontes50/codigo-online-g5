@@ -107,7 +107,7 @@ export default function CheckOutView() {
                             {errors.direccion && <small className="text-danger">Solo se acepta letras y dígitos</small>}
                         </div>
 
-                        <button type="submit" className="btn btn-dark btn-lg">
+                        <button type="submit" className="btn btn-dark btn-lg" disabled={carrito.length <= 0}>
                             Comprar
                         </button>
                     </form>
