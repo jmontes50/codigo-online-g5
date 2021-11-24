@@ -69,6 +69,23 @@ export default function CheckOutView() {
                             {/* errors.prop existe && retorna esto */}
                             {errors.nombreCompleto && <small className="text-danger">Este campo es obligatorio</small>}
                         </div>
+
+                        <div className="mb-2">
+                            <label className="form-label">Télefono</label>
+                            <input
+                                type="text"
+                                placeholder="Ej. 926384679"
+                                className="form-control"
+                                {...register("telefono", {
+                                    required: { value: true, message: "Es requerido" },
+                                    minLength: { value: 6, message: "Se require 6 dígitos" },
+                                    maxLength: { value: 14, message: "Máximo 14 dígitos" },
+                                })}
+                            />
+                            {/* errors.prop existe && retorna esto */}
+                            {errors.telefono && <small className="text-danger">{errors.telefono.message}</small>}
+                        </div>
+
                         <button type="submit" className="btn btn-dark btn-lg">
                             Comprar
                         </button>
