@@ -1,8 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CarritoContext } from "../context/carritoContext";
 import { useForm } from "react-hook-form"; //useForm es un hook personalizado, para manejar formularios
+import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 
 export default function CheckOutView() {
+    const [coordenadas, setCoordenadas] = useState([-12.0433, -77.028]);
     const { carrito } = useContext(CarritoContext);
 
     let total = 0;
@@ -106,6 +108,14 @@ export default function CheckOutView() {
                             />
                             {errors.direccion && <small className="text-danger">Solo se acepta letras y dígitos</small>}
                         </div>
+
+                        <MapContainer center={coordenadas} zoom={15}>
+                            {/* Tile Layer es la fuente de datos para leaflet */}
+                            <TileLayer
+                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            />
+                        </MapContainer>
 
                         <button type="submit" className="btn btn-dark btn-lg" disabled={carrito.length <= 0}>
                             Comprar
