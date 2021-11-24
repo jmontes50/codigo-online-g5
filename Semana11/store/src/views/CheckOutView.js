@@ -2,6 +2,8 @@ import { useContext, useState } from "react";
 import { CarritoContext } from "../context/carritoContext";
 import { useForm } from "react-hook-form"; //useForm es un hook personalizado, para manejar formularios
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
+import { guardarVenta } from "../services/ventasService";
+import Swal from "sweetalert2";
 
 export default function CheckOutView() {
     const [coordenadas, setCoordenadas] = useState([-12.0433, -77.028]);
@@ -23,8 +25,22 @@ export default function CheckOutView() {
         formState: { errors },
     } = useForm();
 
-    const recibirSubmit = (data) => {
-        console.log("Rev. data:", data);
+    const recibirSubmit = async (data) => {
+        try {
+            let nuevaVenta = {
+                ...data, //nombreCompleto, telefono, email, direccion
+                coordenadas,
+                productos: carrito,
+                total,
+            };
+            await guardarVenta(nuevaVenta);
+            Swal.fire({
+                icon: "success",
+                title: "Venta Realizada",
+            });
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const AnadirMarcador = () => {

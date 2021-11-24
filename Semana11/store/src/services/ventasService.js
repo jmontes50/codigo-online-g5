@@ -7,7 +7,7 @@ const guardarVenta = async (nuevaVenta) => {
         const headers = {
             "Content-Type": "application/json",
         };
-        const { data } = await axios(URL, nuevaVenta, { headers });
+        const { data } = await axios.post(URL, nuevaVenta, { headers });
         return data;
     } catch (error) {
         throw error;
