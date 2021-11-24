@@ -102,7 +102,7 @@ export default function CheckOutView() {
                                 type="text"
                                 placeholder="Ej. Urb Los Arces F 67"
                                 className="form-control"
-                                {...register("direccion", { pattern: /^[A-Za-z0-9]$/ })}
+                                {...register("direccion", { pattern: /^[A-Za-z0-9]*$/ })}
                             />
                             {errors.direccion && <small className="text-danger">Solo se acepta letras y dígitos</small>}
                         </div>
