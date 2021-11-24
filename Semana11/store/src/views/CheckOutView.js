@@ -11,6 +11,20 @@ export default function CheckOutView() {
         return acum + prod.cantidad * prod.precio;
     }, 0);
 
+    // hook forms
+    //register: es necesario para registrar c/input, messirve como referencia de los input
+    //handleSubmit: función que me permite manejar el evento submit del form
+    //errors: me permite por c/input mostrar un mensajito de error
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
+    const recibirSubmit = (data) => {
+        console.log("Rev. data:", data);
+    };
+
     return (
         <div className="container mt-4">
             <h1>Checkout</h1>
@@ -40,6 +54,25 @@ export default function CheckOutView() {
                             <li className="list-group-item">Todavía no ha agregado ningún producto.</li>
                         )}
                     </ul>
+                </div>
+                {/* formulario */}
+                <div className="col-12 col-md-6">
+                    <form onSubmit={handleSubmit(recibirSubmit)}>
+                        <div className="mb-2">
+                            <label className="form-label">Nombres y Apellidos</label>
+                            <input
+                                type="text"
+                                placeholder="Ej. Juan Perez"
+                                className="form-control"
+                                {...register("nombreCompleto", { required: true })}
+                            />
+                            {/* errors.prop existe && retorna esto */}
+                            {errors.nombreCompleto && <small className="text-danger">Este campo es obligatorio</small>}
+                        </div>
+                        <button type="submit" className="btn btn-dark btn-lg">
+                            Comprar
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
