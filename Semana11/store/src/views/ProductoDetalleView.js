@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { CarritoContext } from "../context/carritoContext";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { obtenerProductoPorId } from "../services/productoService";
 import { obtenerCategorias } from "../services/categoriaService";
 import ReactImageMagnify from "react-image-magnify";
@@ -11,6 +11,8 @@ export default function ProductoDetalleView() {
     const [categoria, setCategoria] = useState("");
 
     const { id } = useParams(); //un objeto con todos los parámetros de la URL
+
+    const navigate = useNavigate();
 
     const { anadirACarrito } = useContext(CarritoContext);
 
@@ -47,6 +49,11 @@ export default function ProductoDetalleView() {
             cantidad,
         };
         anadirACarrito(nuevoProducto);
+    };
+
+    const ejecutarComprarAhora = () => {
+        anadirACarritoContext();
+        navigate("/checkout");
     };
 
     useEffect(() => {
@@ -119,7 +126,9 @@ export default function ProductoDetalleView() {
                                         <i className="fas fa-cart-plus"></i> Añadir a carrito
                                     </button>
                                 </div>
-                                <button className="btn btn-outline-dark btn-lg mt-2">Comprar ahora!</button>
+                                <button className="btn btn-outline-dark btn-lg mt-2" onClick={ejecutarComprarAhora}>
+                                    Comprar ahora!
+                                </button>
                             </div>
                         </>
                     ) : null}
