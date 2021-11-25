@@ -13,6 +13,7 @@ import ProductoDetalleView from "./views/ProductoDetalleView";
 import CarritoView from "./views/CarritoView";
 import NotFound from "./views/NotFound";
 import ProductoConFiltrosView from "./views/ProductoConFiltrosView";
+import Footer from "./components/Footer";
 
 export default function App() {
     return (
@@ -42,6 +43,7 @@ export default function App() {
                             }
                         />
                     </Routes>
+                    <Footer />
                 </Router>
             </CarritoContextProvider>
         </AuthContextProvider>
