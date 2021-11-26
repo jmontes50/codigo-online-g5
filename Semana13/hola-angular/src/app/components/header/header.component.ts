@@ -7,8 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-	texto = "Vacaciones";
+	texto:string = "Vacaciones";
 
+	actividades:Array<string> = [
+		"Ver películas",
+		"Viajar",
+		"Probar comida nueva",
+		"Nadar",
+		"Respirar",
+		"Escuchar Música",
+		"Salir a cenar",
+	]
 
   constructor() { }
 
