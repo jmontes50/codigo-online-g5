@@ -21,3 +21,6 @@ let gatita:iGato = {
 	antipatico:false,
 	tamanio:5,
 }
+
+//tsc nombre_archivo.ts => nombre_archivo.js
+//node nombre_archivo.js
