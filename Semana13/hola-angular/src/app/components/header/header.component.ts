@@ -23,12 +23,12 @@ export class HeaderComponent implements OnInit {
 
 	urlImagen:string = "https://picsum.photos/400"
 
-	nuevaActividad:string = "";
+	nuevaActividad:string = "ver las estrellas";
 
   constructor() { }
 
   agregarActividad() {
-	  alert("Método ejecutado!!")
+	  console.log(this.nuevaActividad);
   }
 
   ngOnInit(): void {
