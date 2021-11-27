@@ -25,6 +25,10 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  agregarActividad() {
+	  alert("Método ejecutado!!")
+  }
+
   ngOnInit(): void {
   }
 
