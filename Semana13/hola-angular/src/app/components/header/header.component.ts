@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
 
 	losQuiere:boolean = false;
 
-	
+	urlImagen:string = "https://picsum.photos/400"
 
   constructor() { }
 
