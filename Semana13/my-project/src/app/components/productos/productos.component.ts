@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs'; //tipos, types
   styleUrls: ['./productos.component.css'],
 })
 export class ProductosComponent implements OnInit {
-  misProductos: Array<any>;
+  misProductos: Array<string> = [];
   subscripcionProdServ: Subscription;
 
   constructor(private _sProductos: ProductosService) {}
@@ -17,7 +17,9 @@ export class ProductosComponent implements OnInit {
     this.subscripcionProdServ = this._sProductos
       .obtenerProductos()
       .subscribe((datos) => {
-        console.log(datos);
+        // console.log(datos);
+        this.misProductos = datos;
+        // console.log(this.misProductos);
       });
   }
 
