@@ -23,6 +23,8 @@ export class HeaderComponent implements OnInit {
 
 	urlImagen:string = "https://picsum.photos/400"
 
+	nuevaActividad:string = "";
+
   constructor() { }
 
   agregarActividad() {

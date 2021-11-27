@@ -20,8 +20,15 @@
 
 <!-- PropertyBinding [] : mandar datos del .ts hacia el .html -->
 <img [src]="urlImagen" alt="imagencita">
+<br>
 
-<!-- EventBinding [] : mandar datos del .html hacia el .ts -->
+<!--  -->
+<input 
+	[(ngModel)]="nuevaActividad"
+	type="text" 
+	placeholder="Ej. Tomar Fotos"
+>
+<!-- EventBinding () : mandar datos del .html hacia el .ts -->
 <button (click)="agregarActividad()">
 	Agregar Actividad
 </button>
