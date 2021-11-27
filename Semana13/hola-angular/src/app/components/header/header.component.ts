@@ -19,6 +19,10 @@ export class HeaderComponent implements OnInit {
 		"Salir a cenar",
 	]
 
+	losQuiere:boolean = false;
+
+	
+
   constructor() { }
 
   ngOnInit(): void {
