@@ -19,7 +19,7 @@ export class ProductosComponent implements OnInit {
       .subscribe((datos) => {
         // console.log(datos);
         this.misProductos = datos;
-        // console.log(this.misProductos);
+        console.log(this.misProductos);
       });
   }
 
