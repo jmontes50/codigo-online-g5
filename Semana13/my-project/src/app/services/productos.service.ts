@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 //Observable es la manera que se va a enviar el resultado de mis peticiones, type
 import { Observable } from 'rxjs';
 
+import iProducto from '../interfaces/iProducto';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -16,5 +18,9 @@ export class ProductosService {
 
   obtenerProductos(): Observable<any> {
     return this._Http.get(this.url);
+  }
+
+  crearNuevoProducto(nuevoProducto: iProducto): Observable<any> {
+    return this._Http.post(this.url, nuevoProducto);
   }
 }

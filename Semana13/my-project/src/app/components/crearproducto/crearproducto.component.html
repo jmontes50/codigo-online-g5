@@ -1,0 +1,36 @@
+<h3>Crear nuevo Producto</h3>
+<div>
+	<div class="mb-3">
+		<label class="form-label">Nombre Producto: </label>
+		<input
+		  type="text"
+		  class="form-control"
+		  placeholder="Ej. Lentes"
+		  [(ngModel)]="nuevoProducto.nombre"
+		/>
+		<!-- Two way data binding -->
+	  </div>
+	  <div class="mb-3">
+		<label class="form-label">Descripción Producto: </label>
+		<input
+		  type="text"
+		  class="form-control"
+		  placeholder="Ej. Lentes Verdes con filtro UV"
+		  [(ngModel)]="nuevoProducto.descripcion"
+		/>
+		<!-- Two way data binding -->
+	  </div>
+	  <div class="mb-3">
+		<label class="form-label">Precio Producto: </label>
+		<input
+		  type="number"
+		  class="form-control"
+		  placeholder="Ej. 40"
+		  [(ngModel)]="nuevoProducto.precio"
+		/>
+		<!-- Two way data binding -->
+	  </div>
+	  <button class="btn btn-dark btn-lg" (click)="crearProducto()">
+		  Crear
+	  </button>
+</div>

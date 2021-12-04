@@ -1,8 +1,8 @@
 <div class="card mb-2">
-	<img src="https://picsum.photos/200" alt="foto" class="img-card-top">
+	<img [src]="prod.imagen" alt="foto" class="img-card-top">
 	<div class="card-body">
-		<h5 class="card-title">Producto</h5>
-		<p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, mollitia.</p>
-		<p class="fw-bold">S/ 100.00</p>
+		<h5 class="card-title">{{prod.nombre}}</h5>
+		<p class="card-text">{{prod.descripcion}}</p>
+		<p class="fw-bold">S/ {{prod.precio.toFixed(2)}}</p>
 	</div>
 </div>

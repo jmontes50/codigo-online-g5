@@ -14,13 +14,16 @@ export class ProductosComponent implements OnInit {
   constructor(private _sProductos: ProductosService) {}
 
   getProductos() {
-    this.subscripcionProdServ = this._sProductos
-      .obtenerProductos()
-      .subscribe((datos) => {
+    this.subscripcionProdServ = this._sProductos.obtenerProductos().subscribe(
+      (datos) => {
         // console.log(datos);
         this.misProductos = datos;
         console.log(this.misProductos);
-      });
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   ngOnInit(): void {
